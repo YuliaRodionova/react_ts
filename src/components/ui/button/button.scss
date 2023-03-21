@@ -1,0 +1,26 @@
+.button {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #FFC85E;
+    color: white;
+    padding: 10px;
+
+
+    &__circle {
+        border-radius: 50%;
+    }
+
+    svg {
+        width: 10px;
+        height: 10px;
+        fill: #fff;
+    }
+
+    &__bg-white {
+        background-color: inherit;
+        color: #3F4E65;
+    }
+}

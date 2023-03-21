@@ -1,0 +1,21 @@
+.button {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFC85E;
+  color: white;
+  padding: 10px;
+}
+.button__circle {
+  border-radius: 50%;
+}
+.button svg {
+  width: 10px;
+  height: 10px;
+  fill: #fff;
+}
+.button__bg-white {
+  background-color: inherit;
+  color: #3F4E65;
+}/*# sourceMappingURL=button.css.map */

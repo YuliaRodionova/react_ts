@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__elems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid #3F4E65;
+  border-bottom: 1px solid #3F4E65;
+}
+.nav__label {
+  border-left: 1px dashed #3F4E65;
+}/*# sourceMappingURL=nav.css.map */
