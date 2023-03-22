@@ -1,0 +1,9 @@
+.list {
+  width: 100%;
+}
+.list__item a {
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+}/*# sourceMappingURL=list.css.map */

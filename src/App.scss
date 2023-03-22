@@ -1,25 +1,15 @@
+@import "./var";
 /*reset*/
 
 /* Box sizing rules */
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul,
@@ -39,9 +29,8 @@ body {
   line-height: 1.5;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a {
+  text-decoration: none;
 }
 
 /* Make images easier to work with */
@@ -73,5 +62,58 @@ select {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+h3,
+.h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+
+}
+
+
+.icon {
+  width: 39px;
+  height: 39px;
+
+  &_circle {
+    border-radius: 50%;
+  }
+
+  &_blue {
+    background-color: $telegramColor;
+  }
+
+  &_green {
+    background-color: $whatsappColor;
+  }
+
+  &_min {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+
+  }
+}
+
+.count {
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  padding: 1px 3px 1px 4px;
+  background-color: $mainColor;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+
+  &__wrapper {
+    position: relative;
   }
 }

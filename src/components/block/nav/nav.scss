@@ -1,20 +1,51 @@
+@import "../../../_var.scss";
+@import "../../../mixin";
+
 .nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+
+
+    &__container {
+        @include flexContainerBetween;
+        flex-wrap: wrap;
+        @include container;
+    }
 
     &__elems {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexContainerAround;
         width: 100%;
-        border-top: 1px solid #3F4E65;
-        border-bottom: 1px solid #3F4E65;
+        border-top: 1px solid $opacityDarkColor;
+        border-bottom: 1px solid $opacityDarkColor;
+        padding: 10px 15px;
     }
 
     &__label {
-        border-left: 1px dashed #3F4E65;
+        @include flexContainerCenter;
+        border-left: 1px dashed $opacityDarkColor;
+        width: 50%;
+        overflow: hidden;
+
+        svg {
+            margin-right: 5px;
+        }
     }
+
+    &__button {
+        @include flexContainerCenter;
+        @include mainFont;
+        flex-direction: row-reverse;
+        width: 50%;
+
+        svg {
+            margin-right: 5px;
+        }
+    }
+
+    &__input {
+        @include mainFont;
+        max-width: 50%;
+        color: $darkColor;
+
+    }
+
 
 }

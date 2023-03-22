@@ -1,0 +1,17 @@
+@import '../../../var';
+@import "../../../mixin";
+
+
+
+.list {
+    width: 100%;
+
+    &__item {
+
+        a {
+            color: #fff;
+            @include mainFont;
+        }
+
+    }
+}

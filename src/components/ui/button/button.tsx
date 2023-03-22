@@ -5,6 +5,7 @@ interface IButton {
     styleClass: string;
     text?: string;
     picture?: any;
+    type?: string;
 }
 
 function Button(props: IButton): JSX.Element {

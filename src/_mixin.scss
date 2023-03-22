@@ -1,0 +1,55 @@
+@mixin container {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0;
+
+    @media screen and (min-width: 552px) {
+        max-width: 440px;
+        padding: 20px 0;
+    }
+
+    @media screen and (min-width: 768px) {
+        max-width: 600px;
+    }
+
+    @media screen and (min-width: 992px) {
+        max-width: 800px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        max-width: 1300px;
+        padding: 30px 100px;
+    }
+}
+
+@mixin flexContainerBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flexContainerCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin flexContainerAround {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexContainerStart {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin mainFont {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    font-weight: 400;
+}

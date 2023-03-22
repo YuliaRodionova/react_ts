@@ -1,0 +1,134 @@
+.footer {
+  background-color: #3F4E65;
+}
+.footer__container {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 552px) {
+  .footer__container {
+    max-width: 440px;
+    padding: 20px 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__container {
+    max-width: 600px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer__container {
+    max-width: 800px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .footer__container {
+    max-width: 1300px;
+    padding: 30px 100px;
+  }
+}
+.footer__download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.footer__download svg {
+  margin-left: 5px;
+}
+.footer__text {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.2rem;
+  margin-top: 15px;
+}
+.footer__form {
+  position: relative;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+.footer__input {
+  background-color: #fff;
+  padding: 15px;
+}
+.footer__input::-moz-placeholder {
+  padding-left: 1.2rem;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+}
+.footer__input::placeholder {
+  padding-left: 1.2rem;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+}
+.footer__button {
+  position: absolute;
+  padding: 15px;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+.footer .wrapper {
+  align-self: flex-start;
+}
+.footer .wrapper h3 {
+  margin-bottom: 10px;
+}
+.footer .wrapper ul li {
+  margin-bottom: 10px;
+}
+.footer__title-contact {
+  margin: 25px 0;
+  width: 100%;
+}
+.footer__contact {
+  align-self: flex-start;
+  width: 50%;
+  color: #fff;
+}
+.footer__contact > * {
+  margin-bottom: 10px;
+}
+.footer__contact-title {
+  font-size: 0.875rem;
+  line-height: 1.3rem;
+}
+.footer__contact-title.title_min {
+  font-weight: 400;
+}
+.footer__contact-text {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  font-weight: 300;
+}
+.footer__contact-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer__contact a {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  font-family: Inter;
+  font-size: 0.625rem;
+  font-weight: 400;
+  line-height: 0.94px;
+}
+.footer__contact img {
+  border-radius: 5px;
+}/*# sourceMappingURL=footer.css.map */
