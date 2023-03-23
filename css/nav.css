@@ -1,4 +1,4 @@
-.nav__container {
+.header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,33 +9,33 @@
   padding: 5px 0;
 }
 @media screen and (min-width: 552px) {
-  .nav__container {
+  .header__container {
     max-width: 440px;
     padding: 10px 0;
   }
 }
 @media screen and (min-width: 768px) {
-  .nav__container {
+  .header__container {
     max-width: 600px;
   }
 }
 @media screen and (min-width: 992px) {
-  .nav__container {
+  .header__container {
     max-width: 800px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .nav__container {
+  .header__container {
     max-width: 1000px;
   }
 }
 @media screen and (min-width: 1440px) {
-  .nav__container {
+  .header__container {
     max-width: 1300px;
     padding: 15px 15px 50px;
   }
 }
-.nav__elems {
+.header__elems {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@
   border-bottom: 1px solid rgba(63, 78, 101, 0.1);
   padding: 10px 15px;
 }
-.nav__label {
+.header__label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,10 +52,10 @@
   width: 50%;
   overflow: hidden;
 }
-.nav__label svg {
+.header__label svg {
   margin-right: 5px;
 }
-.nav__button {
+.header__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,10 +65,10 @@
   flex-direction: row-reverse;
   width: 50%;
 }
-.nav__button svg {
+.header__button svg {
   margin-right: 5px;
 }
-.nav__input {
+.header__input {
   font-size: 0.75rem;
   line-height: 0.875rem;
   font-weight: 400;

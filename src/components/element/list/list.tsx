@@ -7,7 +7,7 @@ interface IlistItem {
 }
 
 interface IList {
-    title: string;
+    title?: string;
     items: IlistItem[]
 }
 
@@ -20,9 +20,9 @@ function List(props: IList): JSX.Element {
 
     return (
         <div className='wrapper'>
-            <h3>{title}:</h3>
+            {title && <h3>{title}:</h3>}
             <ul className='list'>{itemsElems}</ul>
-        </div>
+        </div >
     );
 }
 export default List;

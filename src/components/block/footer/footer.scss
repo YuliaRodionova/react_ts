@@ -192,8 +192,7 @@
 
 
         &-title {
-            font-size: 0.875rem;
-            line-height: 1.3rem;
+            @include miniTitle;
 
             &.title {
                 &_min {
