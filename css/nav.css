@@ -6,12 +6,12 @@
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 @media screen and (min-width: 552px) {
   .nav__container {
     max-width: 440px;
-    padding: 20px 0;
+    padding: 10px 0;
   }
 }
 @media screen and (min-width: 768px) {
@@ -24,10 +24,15 @@
     max-width: 800px;
   }
 }
+@media screen and (min-width: 1200px) {
+  .nav__container {
+    max-width: 1000px;
+  }
+}
 @media screen and (min-width: 1440px) {
   .nav__container {
     max-width: 1300px;
-    padding: 30px 100px;
+    padding: 15px 15px 50px;
   }
 }
 .nav__elems {
