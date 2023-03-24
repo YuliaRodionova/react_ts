@@ -1,0 +1,14 @@
+@import "../../../var";
+@import "../../../mixin";
+
+.param {
+    @include miniTitle;
+
+    &_description {
+        font-weight: 500;
+    }
+
+    &_title {
+        font-weight: 300;
+    }
+}

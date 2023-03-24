@@ -1,0 +1,14 @@
+@import "../../../var";
+@import "../../../mixin";
+
+.badge {
+    width: 34px;
+    height: 23px;
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.6) 25%);
+    border-radius: 10px;
+    text-align: center;
+    @include mainFont;
+    font-weight: 300;
+    color: $darkColor;
+
+}

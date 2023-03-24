@@ -36,10 +36,6 @@
             width: 100%;
         }
 
-        svg {
-            margin-left: 5px;
-        }
-
         &_min {
             display: flex;
 
@@ -70,7 +66,7 @@
         margin-top: 15px;
     }
 
-    &__form {
+    /*&__form {
         position: relative;
         margin-top: 15px;
         margin-bottom: 25px;
@@ -101,7 +97,7 @@
         top: calc(50% + 8px);
         right: 10px;
         transform: translateY(-50%);
-    }
+    }*/
 
     &__wrapper,
     .wrapper {

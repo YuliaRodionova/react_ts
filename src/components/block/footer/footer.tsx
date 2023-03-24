@@ -1,6 +1,8 @@
 import "./footer.scss";
 import Button from "../../ui/button/button";
 import List from "../../element/list/list";
+import Input from "../../ui/input/input";
+import PriceList from "../../element/priceList/priceList";
 
 function Footer(): JSX.Element {
     return (
@@ -8,22 +10,13 @@ function Footer(): JSX.Element {
             <div className="footer__container">
                 <div className="footer__wrapper">
                     <img className="footer__logo" src="/logoFooter.png" alt="лого" />
-                    <a href="#" className="button footer__download footer__download_min">Прайс-лист
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.79199 3.375H6.62532V0.125H3.37532V3.375H1.20866L5.00032 7.70833L8.79199 3.375ZM0.666992 8.79167H9.33366V9.875H0.666992V8.79167Z" fill="white" />
-                        </svg>
-                    </a>
+                    <PriceList styleClassForLink="button footer__download footer__download_min" />
                     <h2 className="footer__text">Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в Кокчетаве
                         и Акмолинской области</h2>
                     <h3 className="footer__text">Подпишись на скидки и акции</h3>
-                    <form action="/" className="footer__form">
-                        <input className="button footer__input" type="email" name="email" placeholder="Введите ваш E-mail" />
-                        <Button styleClass="button button__circle footer__button" type="submit" picture={
-                            <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 12.8571L5 7.5L0 2.14286L1 0L8 7.5L1 15L0 12.8571Z" fill="white" />
-                            </svg>
-                        } />
-                    </form>
+                    <Input text="Введите ваш E-mail" picture={<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 12.8571L5 7.5L0 2.14286L1 0L8 7.5L1 15L0 12.8571Z" fill="white" />
+                    </svg>} />
                 </div>
                 <List title="Меню сайта" items={[{ text: 'О компании', link: 'https://dzen.ru/?yredirect=true' }, { text: 'Доставка и оплата', link: 'https://dzen.ru/?yredirect=true' }, { text: 'Возврат', link: 'https://dzen.ru/?yredirect=true' }, { text: 'Контакты', link: 'https://dzen.ru/?yredirect=true' },]} />
                 <List title="Категории" items={[{ text: 'Бытовая химия', link: 'https://dzen.ru/?yredirect=true' }, { text: 'Косметика и гигиена', link: 'https://dzen.ru/?yredirect=true' }, { text: 'Товары для дома', link: 'https://dzen.ru/?yredirect=true' }, { text: 'Товары для детей и мам', link: 'https://dzen.ru/?yredirect=true' }, { text: 'Посуда', link: 'https://dzen.ru/?yredirect=true' },]} />
@@ -42,11 +35,7 @@ function Footer(): JSX.Element {
                 <div className="footer__contact footer__contact-container">
                     <div className="footer__download_max">
                         <h3 className="footer__title-contact title">Скачать прайс-лист:</h3>
-                        <a href="#" className="button footer__download">Прайс-лист
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.79199 3.375H6.62532V0.125H3.37532V3.375H1.20866L5.00032 7.70833L8.79199 3.375ZM0.666992 8.79167H9.33366V9.875H0.666992V8.79167Z" fill="white" />
-                            </svg>
-                        </a>
+                        <PriceList styleClassForLink="button button_white-icon footer__download" />
                     </div>
                     <h4 className="footer__contact-title title_min">Связь
                         в мессенджерах:</h4>
