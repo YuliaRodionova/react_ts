@@ -1,21 +1,18 @@
 import "./card.scss";
 import CartButton from "../../element/cartButton/cartButton";
 import TextParamElem from "../../ui/textParamElem/textParamElem";
-export interface ICard {
-    img: any;
-    weightIcon: any;
-    weight: number;
-    unit: string;
-    brand: string;
-    productName: string;
-    code: number | string;
-    producer?: string;
-    price: number;
+import { ICard } from "../../../interfaces/ICard";
+interface ICardProductItem {
+    productItem: ICard,
 }
 
+function Card({ productItem }: ICardProductItem): JSX.Element {
+    const { id, img, weightIcon, weight, unit, brand, productName, code, producer, price } = productItem;
 
-function Card(props: ICard): JSX.Element {
-    const { img, weightIcon, weight, unit, brand, productName, code, producer, price } = props;
+    const productCartItem = {
+        ...productItem,
+        count: 1
+    }
     return (
         <div>
             <img src={img} alt="" />
@@ -29,7 +26,7 @@ function Card(props: ICard): JSX.Element {
             <TextParamElem keyParam="Бренд:" valueParam={brand} />
             <div>
                 <p>{price} ₸</p>
-                <CartButton />
+                <CartButton productCartItem={productCartItem} />
             </div>
         </div>
     )

@@ -6,12 +6,13 @@ interface IButton {
     text?: string;
     picture?: any;
     type?: string;
+    handlerClick?: any;
 }
 
 function Button(props: IButton): JSX.Element {
-    const { styleClass, text, picture } = props;
+    const { styleClass, text, picture, handlerClick } = props;
     return (
-        <button className={styleClass}> {text} {picture}
+        <button onClick={handlerClick} className={styleClass}> {text} {picture}
         </button >
     )
 }

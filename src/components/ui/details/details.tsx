@@ -2,15 +2,15 @@ import "./details.scss"
 
 interface IDetails {
     title: string;
-    description: string | any;
+    children: string | any;
 }
 
 function Details(props: IDetails): JSX.Element {
-    const { title, description } = props;
+    const { title, children } = props;
     return (
         <details className='details'>
             <summary className='details__title'>{title}</summary>
-            <p className='details__description'>{description}</p>
+            {children}
         </details>
     )
 
