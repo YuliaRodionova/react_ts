@@ -6,7 +6,6 @@
   margin-right: auto;
 }
 .form__input {
-  background-color: #fff;
   padding: 15px;
   margin-top: 15px;
   width: 100%;
@@ -26,6 +25,24 @@
   .form__input::placeholder {
     padding: 0;
   }
+}
+.form__input_white {
+  background-color: #fff;
+}
+.form__input_white::-moz-placeholder {
+  color: #EDEDED;
+}
+.form__input_white::placeholder {
+  color: #EDEDED;
+}
+.form__input_gray {
+  background-color: #EDEDED;
+}
+.form__input_gray::-moz-placeholder {
+  color: #3F4E65;
+}
+.form__input_gray::placeholder {
+  color: #3F4E65;
 }
 .form__button {
   position: absolute;

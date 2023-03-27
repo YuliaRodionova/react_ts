@@ -1,3 +1,5 @@
+@import '../../../var';
+
 .form {
     position: relative;
     margin-top: 15px;
@@ -6,7 +8,7 @@
     margin-right: auto;
 
     &__input {
-        background-color: #fff;
+
         padding: 15px;
         margin-top: 15px;
         width: 100%;
@@ -18,6 +20,22 @@
 
             @media screen and (min-width: 768px) {
                 padding: 0;
+            }
+        }
+
+        &_white {
+            background-color: #fff;
+
+            &::placeholder {
+                color: $grayColor;
+            }
+        }
+
+        &_gray {
+            background-color: $grayColor;
+
+            &::placeholder {
+                color: $darkColor;
             }
         }
     }

@@ -1,0 +1,21 @@
+@import '../../../mixin';
+
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    gap: 21px;
+    background-color: #fbfbfb;
+    padding: 20px 0px 20px 10px;
+
+}
+
+.cards-page {
+    @include container;
+    display: flex;
+
+
+    &__title {
+        width: 100%;
+    }
+}

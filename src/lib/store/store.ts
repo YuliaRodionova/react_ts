@@ -1,10 +1,12 @@
 import { legacy_createStore, combineReducers, applyMiddleware, compose } from "redux";
 // import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import cartReducer from "../reducers/cart";
+import productsReducer from "../reducers/products";
 import { loadState } from "../localStorage/localStorage";
 
 const rootReducer = combineReducers({
-    cartList: cartReducer
+    cartList: cartReducer,
+    productsList: productsReducer
 });
 
 const persistedState = loadState();

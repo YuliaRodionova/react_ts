@@ -6,6 +6,6 @@
 .param_description {
   font-weight: 500;
 }
-.param_title {
-  font-weight: 300;
+.param__title {
+  margin-right: 5px;
 }/*# sourceMappingURL=textParamElem.css.map */

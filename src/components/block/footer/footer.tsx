@@ -14,7 +14,7 @@ function Footer(): JSX.Element {
                     <h2 className="footer__text">Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в Кокчетаве
                         и Акмолинской области</h2>
                     <h3 className="footer__text">Подпишись на скидки и акции</h3>
-                    <Input text="Введите ваш E-mail" picture={<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <Input styleClass="button form__input form__input_gray" text="Введите ваш E-mail" picture={<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 12.8571L5 7.5L0 2.14286L1 0L8 7.5L1 15L0 12.8571Z" fill="white" />
                     </svg>} />
                 </div>

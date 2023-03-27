@@ -215,9 +215,6 @@
   max-width: 50%;
   color: #3F4E65;
 }
-.header .form__input {
-  background-color: #EDEDED;
-}
 .header .form__button {
   padding: 14px;
   right: 6px;

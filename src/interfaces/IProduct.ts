@@ -7,4 +7,5 @@ export interface IProduct extends ICard {
     productType?: string;
     boxSize?: number;
     quantityInBox?: number;
+    description?: string;
 }

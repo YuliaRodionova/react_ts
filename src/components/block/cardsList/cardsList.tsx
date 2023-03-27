@@ -1,15 +1,21 @@
+import './cardsList.scss'
+import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import Card from "../../block/card/card";
+import Card from '../card/card';
 import { mockProducts } from '../../../mocks/productsMock';
 import { IProduct } from '../../../interfaces/IProduct';
+import Sidebar from '../sidebar/sidebar';
+import { RootState } from '../../../lib/store/store';
 
 
-function Catalogue(): JSX.Element {
+function CardsList(): JSX.Element {
+    const productsListState = useSelector((store: RootState) => store.productsList);
     const [products, setProducts] = useState<IProduct[]>([]);
     const [sortBy, setSort] = useState<string>('name_asc');
 
     useEffect(() => {
-        const productsList: IProduct[] = JSON.parse(mockProducts);
+        const productsList: IProduct[] = productsListState.productsList.length > 0 ? productsListState.productsList : JSON.parse(mockProducts);
+
         switch (sortBy) {
             case 'name_asc':
                 productsList.sort((a, b) => a.brand > b.brand ? 1 : -1);
@@ -45,9 +51,15 @@ function Catalogue(): JSX.Element {
                 <option value="price_asc">По цене ASC</option>
                 <option value="price_desc">По цене DESC</option>
             </select>
-            {cardsList.length > 0 ? cardsList : <p>Товаров нет</p>}
+            {cardsList.length > 0 ? <div >
+                <h2 className='section-title cards-page__title'>Косметика и гигиена</h2>
+                <div className='cards-page'>
+                    <Sidebar />
+                    <div className='cards-list'>{cardsList}</div>
+                </div>
+            </div> : <p>Товаров нет</p>}
         </>
     )
 }
 
-export default Catalogue;
+export default CardsList;

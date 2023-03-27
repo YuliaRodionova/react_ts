@@ -14,18 +14,18 @@ function Card({ productItem }: ICardProductItem): JSX.Element {
         count: 1
     }
     return (
-        <div>
-            <img src={img} alt="" />
+        <div className="card">
+            <img className="card__img" src={img} alt="" />
             <div>
                 {weightIcon}
-                <p>{weight} {unit}</p>
+                <p className="card-title">{weight} {unit}</p>
             </div>
-            <h4><span>{brand}</span> {productName}</h4>
-            <TextParamElem keyParam="Штрихкод:" valueParam={code} />
-            <TextParamElem keyParam="Производитель:" valueParam={producer ? producer : brand} />
-            <TextParamElem keyParam="Бренд:" valueParam={brand} />
-            <div>
-                <p>{price} ₸</p>
+            <h4 className="card__title"><span className="card__title_bold">{brand}</span> {productName}</h4>
+            <TextParamElem keyParam="Штрихкод" valueParam={code} />
+            <TextParamElem keyParam="Производитель" valueParam={producer ? producer : brand} />
+            <TextParamElem keyParam="Бренд" valueParam={brand} />
+            <div className="card__footer">
+                <p className="card__price">{price} ₸</p>
                 <CartButton productCartItem={productCartItem} />
             </div>
         </div>

@@ -1,7 +1,7 @@
 export interface ICard {
     id: number;
     img: any;
-    weightIcon: any;
+    weightIcon?: any;
     weight: number;
     unit: string;
     brand: string;

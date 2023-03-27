@@ -130,4 +130,57 @@ h3,
 }
 .count__wrapper {
   position: relative;
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .section-title {
+    font-size: 40px;
+  }
+}
+
+.card-title {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  font-weight: 300;
+  color: #9ca5b1;
+}
+
+.page-wrapper {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 0;
+}
+@media screen and (min-width: 552px) {
+  .page-wrapper {
+    max-width: 440px;
+    padding: 10px 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .page-wrapper {
+    max-width: 600px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-wrapper {
+    max-width: 800px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .page-wrapper {
+    max-width: 1000px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .page-wrapper {
+    max-width: 1300px;
+    padding: 20px;
+  }
 }/*# sourceMappingURL=App.css.map */

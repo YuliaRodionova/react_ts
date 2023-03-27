@@ -1,0 +1,35 @@
+@import '../../../mixin';
+
+.cart {
+    @include container;
+
+
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__sum {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    &__button {
+        margin-bottom: 25px;
+    }
+
+    &__footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+
+        @media screen and (min-width: 552px) {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 0;
+        }
+    }
+
+}
