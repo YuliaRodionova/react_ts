@@ -2,8 +2,10 @@
 
 .cards-list {
     display: flex;
+    align-items: flex-start;
     flex-wrap: wrap;
     flex-grow: 2;
+    width: 77%;
     gap: 21px;
     background-color: #fbfbfb;
     padding: 20px 0px 20px 10px;
@@ -11,11 +13,50 @@
 }
 
 .cards-page {
+
     @include container;
     display: flex;
 
 
     &__title {
         width: 100%;
+    }
+
+    &__wrapper {
+
+        display: none;
+
+        @media screen and (min-width: 1200px) {
+            display: flex;
+            justify-content: space-between;
+            margin-right: 10px;
+            flex-wrap: wrap;
+            width: 100%;
+
+        }
+
+        @media screen and (min-width: 1400px) {
+            flex-wrap: nowrap;
+
+        }
+
+
+        &>* {
+            margin-right: 10px;
+
+            @media screen and (min-width: 1200px) {
+                margin-top: 10px;
+
+            }
+
+            @media screen and (min-width: 1400px) {
+                margin-top: 0;
+
+            }
+        }
+    }
+
+    .sidebar {
+        width: 23%;
     }
 }

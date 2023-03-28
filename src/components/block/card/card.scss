@@ -1,6 +1,8 @@
 @import '../../../mixin';
 
 .card {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 22px;
     background-color: #fff;
@@ -16,8 +18,9 @@
     }
 
     &__img {
-        width: 200px;
-        height: auto;
+        height: 200px;
+        width: auto;
+        object-fit: contain;
         margin-left: auto;
         margin-right: auto;
     }
@@ -34,6 +37,7 @@
 
     &__footer {
         @include flexContainerBetween;
+        margin-top: auto;
     }
 
     &__price {

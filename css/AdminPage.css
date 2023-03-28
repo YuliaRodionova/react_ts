@@ -1,0 +1,18 @@
+.admin-page__form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10px;
+}
+.admin-page__form fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.admin-page__form input {
+  border: 1px solid #3F4E65;
+  border-radius: 30px;
+  padding: 5px 10px;
+  box-shadow: 0px 4px 4px #CDCDCD;
+}/*# sourceMappingURL=AdminPage.css.map */

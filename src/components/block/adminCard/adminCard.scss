@@ -1,0 +1,19 @@
+@import '../../../mixin';
+
+.admin-card {
+    @include flexContainerBetween;
+
+    &>* {
+        width: 15%;
+    }
+
+    &__img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    &__button {
+        width: auto;
+    }
+}

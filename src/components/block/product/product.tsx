@@ -21,7 +21,7 @@ function Product(props: IProduct): JSX.Element {
             </div>
             <div>
                 <p>{price} ₸</p>
-                <ElemCount />
+                <ElemCount type='button' leftValue='+' rightValue='-' count={1} />
                 {/* <CartButton /> */}
             </div>
             <Button styleClass="button button__bg-white" picture={<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

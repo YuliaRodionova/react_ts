@@ -155,12 +155,10 @@ h3,
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
-  padding: 5px 0;
 }
 @media screen and (min-width: 552px) {
   .page-wrapper {
     max-width: 440px;
-    padding: 10px 0;
   }
 }
 @media screen and (min-width: 768px) {
@@ -181,6 +179,11 @@ h3,
 @media screen and (min-width: 1440px) {
   .page-wrapper {
     max-width: 1300px;
-    padding: 20px;
   }
+}
+
+.title_xs {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
 }/*# sourceMappingURL=App.css.map */

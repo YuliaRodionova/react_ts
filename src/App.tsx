@@ -12,8 +12,8 @@ function App(): JSX.Element {
       <Routes>
         <Route path="/" Component={Main} />
         <Route path="/Cart" Component={Cart} />
-        <Route path="/Product" Component={Product} />
         <Route path="/Admin" Component={AdminPage} />
+        <Route path="/:id" Component={Product} />
       </Routes>
     </Router>
 

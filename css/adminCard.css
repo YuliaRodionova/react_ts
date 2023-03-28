@@ -1,0 +1,17 @@
+.admin-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.admin-card > * {
+  width: 15%;
+}
+.admin-card__img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.admin-card__button {
+  width: auto;
+}/*# sourceMappingURL=adminCard.css.map */

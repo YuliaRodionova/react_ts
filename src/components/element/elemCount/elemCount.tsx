@@ -1,13 +1,20 @@
 import './elemCount.scss';
 import Badge from '../../ui/badge/badge';
 
-function ElemCount(): JSX.Element {
+interface IElemCount {
+    leftValue: string | number,
+    rightValue: string | number,
+    count: string | number,
+    type: string
+}
 
+function ElemCount(props: IElemCount): JSX.Element {
+    const { leftValue, rightValue, count, type } = props;
     return (
-        <div>
-            <Badge type='button' text='+' />
-            <span>1</span>
-            <Badge type='button' text='-' />
+        <div className='elems-count'>
+            <Badge type={type} text={leftValue} />
+            <span>{count}</span>
+            <Badge type={type} text={rightValue} />
         </div>
     )
 

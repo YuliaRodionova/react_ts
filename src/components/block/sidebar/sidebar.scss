@@ -1,6 +1,37 @@
+@import '../../../var';
+
 .sidebar {
+    padding: 15px;
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.2rem;
+        color: #000;
+    }
+
     &__section {
         display: flex;
         flex-direction: column;
+    }
+
+    &__price {
+        font-size: 0.875rem;
+        font-weight: 300;
+        color: $darkColor;
+    }
+
+    .button__circle {
+        padding: 11px;
+    }
+
+    .elems-count {
+        white-space: nowrap;
+        max-width: 100%;
+    }
+
+    .badge {
+        width: 40%;
     }
 }

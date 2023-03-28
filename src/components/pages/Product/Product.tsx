@@ -1,9 +1,9 @@
-import Header from "../../block/header/header";
+import { useParams } from 'react-router';
 import Product from "../../block/product/product";
-import Footer from "../../block/footer/footer";
 import PageLayout from "../../pageLayout/pageLayout";
 
 function Cart(): JSX.Element {
+    const { id } = useParams();
     return (
         <PageLayout>
             <Product id={22222} img="/productImg.jpg" weight={90} unit="г" brand="BioMio" productName="Экологичное туалетное 

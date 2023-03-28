@@ -1,1 +1,1 @@
-{"version":3,"sources":["../src/components/ui/textParamElem/textParamElem.scss","../src/_mixin.scss","textParamElem.css"],"names":[],"mappings":"AAGA;EC2DI,mBAAA;EACA,mBAAA;EACA,gBAAA;AC5DJ;AFEI;EACI,gBAAA;AEAR;AFGI;EACI,iBAAA;AEDR","file":"textParamElem.css"}
+{"version":3,"sources":["../src/components/ui/textParamElem/textParamElem.scss","../src/_mixin.scss","textParamElem.css"],"names":[],"mappings":"AAGA;EC8DI,mBAAA;EACA,mBAAA;EACA,gBAAA;AC/DJ;AFEI;EACI,gBAAA;AEAR;AFGI;EACI,iBAAA;AEDR","file":"textParamElem.css"}

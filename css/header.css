@@ -6,7 +6,6 @@
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
-    padding: 5px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,7 +15,6 @@
 @media screen and (min-width: 768px) and (min-width: 552px) {
   .header__wrapper {
     max-width: 440px;
-    padding: 10px 0;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 768px) {
@@ -37,7 +35,6 @@
 @media screen and (min-width: 768px) and (min-width: 1440px) {
   .header__wrapper {
     max-width: 1300px;
-    padding: 20px;
   }
 }
 .header__wrapper .wrapper {
@@ -123,12 +120,10 @@
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
-  padding: 5px 0;
 }
 @media screen and (min-width: 552px) {
   .header__container {
     max-width: 440px;
-    padding: 10px 0;
   }
 }
 @media screen and (min-width: 768px) {
@@ -149,7 +144,6 @@
 @media screen and (min-width: 1440px) {
   .header__container {
     max-width: 1300px;
-    padding: 20px;
   }
 }
 .header__border {
@@ -214,6 +208,14 @@
   font-weight: 400;
   max-width: 50%;
   color: #3F4E65;
+}
+.header__cart-count {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .header__cart-count {
+    display: block;
+  }
 }
 .header .form__button {
   padding: 14px;

@@ -1,4 +1,29 @@
+.sidebar {
+  padding: 15px;
+}
+.sidebar__title {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+  color: #000;
+}
 .sidebar__section {
   display: flex;
   flex-direction: column;
+}
+.sidebar__price {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #3F4E65;
+}
+.sidebar .button__circle {
+  padding: 11px;
+}
+.sidebar .elems-count {
+  white-space: nowrap;
+  max-width: 100%;
+}
+.sidebar .badge {
+  width: 40%;
 }/*# sourceMappingURL=sidebar.css.map */

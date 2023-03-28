@@ -39,10 +39,10 @@
   background-color: #EDEDED;
 }
 .form__input_gray::-moz-placeholder {
-  color: #3F4E65;
+  color: #5C6370;
 }
 .form__input_gray::placeholder {
-  color: #3F4E65;
+  color: #5C6370;
 }
 .form__button {
   position: absolute;

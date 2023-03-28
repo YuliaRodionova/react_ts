@@ -6,6 +6,7 @@ import { mockProducts } from '../../../mocks/productsMock';
 import { IProduct } from '../../../interfaces/IProduct';
 import Sidebar from '../sidebar/sidebar';
 import { RootState } from '../../../lib/store/store';
+import Button from '../../ui/button/button';
 
 
 function CardsList(): JSX.Element {
@@ -53,6 +54,19 @@ function CardsList(): JSX.Element {
             </select>
             {cardsList.length > 0 ? <div >
                 <h2 className='section-title cards-page__title'>Косметика и гигиена</h2>
+                <div className='cards-page__wrapper'>
+                    <Button styleClass='button__bg-white button_square button_font-main' text='Уход за лицом' />
+                    <Button styleClass='button__bg-white button_square button_font-main' text='Уход за телом' />
+                    <Button styleClass='button__bg-white button_square button_font-main' text='Уход за руками' />
+                    <Button styleClass='button__bg-white button_square button_font-main' text='Уход за ногами' />
+                    <Button styleClass='button__bg-white button_square button_font-main' text='Уход за волосами' />
+                    <Button styleClass='button__bg-white button_square button_font-main' text='Средства для загара' />
+                    <Button styleClass='button__bg-white button_square button_font-main' text='Средства для бритья' />
+                    <Button styleClass='button__bg-white button_square button_font-main' text='Подарочные наборы' />
+                    <Button styleClass='button__bg-white button_square button_font-main' text='Гигиеническая продукция' />
+                    <Button styleClass='button__bg-white button_square button_font-main' text='Гигиена полости рта' />
+                    <Button styleClass='button__bg-white button_square button_font-main' text='Бумажная продукция' />
+                </div>
                 <div className='cards-page'>
                     <Sidebar />
                     <div className='cards-list'>{cardsList}</div>

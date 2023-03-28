@@ -29,11 +29,15 @@ export default function productsReducer(state = initialState, action: IAction) {
                 ...state,
                 productsList: newProductsList
             }
-        // case EDIT_PRODUCT:
-        //     return {
-        //         ...state,
-        //         cartList: []
-        //     }
+        case EDIT_PRODUCT:
+            const { editedProduct } = action.payload;
+            const editedProductsList = state.productsList.map(item => {
+                return item.id == editedProduct.id ? editedProduct : item;
+            });
+            return {
+                ...state,
+                productsList: editedProductsList
+            }
         default:
             return state;
     }

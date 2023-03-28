@@ -2,7 +2,7 @@ import './badge.scss';
 
 interface IBadge {
     type: string;
-    text: string;
+    text: string | number;
 }
 
 function Badge(props: IBadge): JSX.Element {

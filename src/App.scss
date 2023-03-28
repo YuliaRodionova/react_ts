@@ -167,3 +167,12 @@ h3,
 .page-wrapper {
   @include container;
 }
+
+
+.title {
+  &_xs {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+  }
+}

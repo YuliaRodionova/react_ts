@@ -1,6 +1,8 @@
+import './AdminPage.scss';
+import { useEffect } from 'react';
 import { useState } from "react";
 import { customAlphabet } from 'nanoid';
-import { addProduct, deleteProduct } from "../../../lib/actions/actionCreators";
+import { addProduct, editProduct } from "../../../lib/actions/actionCreators";
 import PageLayout from "../../pageLayout/pageLayout";
 import Button from "../../ui/button/button";
 import { IProduct } from "../../../interfaces/IProduct";
@@ -80,11 +82,26 @@ const initialForm: IProduct = {
 //     }
 // ]
 
-
+const initialFormAction = 'add';
 function AdminPage(): JSX.Element {
     const [form, setForm] = useState(initialForm);
+    const [formAction, setFormAction] = useState(initialFormAction);
+    const [buttonText, setButtonText] = useState('');
     const productsList = useSelector((store: RootState) => store.productsList);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        switch (formAction) {
+            case 'add':
+                setButtonText('Добавить товар');
+                break;
+            case 'edit':
+                setButtonText('Обновить товар');
+                break;
+            default:
+                setButtonText('Добавить товар');
+        }
+    }, [formAction])
 
     const changeHandler = (event: HandleNameChangeInterface) => {
         const target = event.target;
@@ -96,34 +113,81 @@ function AdminPage(): JSX.Element {
         });
     }
 
-    const submitHandler = (e: any) => {
+    const submitHandler = (e: any): void => {
         e.preventDefault();
         const nanoid = customAlphabet('1234567890');
-        const id = +nanoid();
+        const id = formAction == 'add' ? +nanoid() : form.id;
         const newProduct = { ...form, id }
-        dispatch(addProduct(newProduct));
+        switch (formAction) {
+            case 'add':
+                dispatch(addProduct(newProduct));
+                break;
+            case 'edit':
+                dispatch(editProduct(newProduct));
+                break;
+            default:
+                dispatch(addProduct(newProduct));
+        }
+        setForm(initialForm);
+        setFormAction(initialFormAction);
+    }
+
+    const setInitialFormAction = (e: any): void => {
+        e.preventDefault();
+        setFormAction(initialFormAction);
     }
 
     const productListElems = productsList ? productsList.productsList.map(product => {
-        return <AdminCard product={product} />
+        return <AdminCard setForm={setForm} setFormAction={setFormAction} product={product} />
     }) : [];
 
     return (
         <PageLayout>
             <>
                 <h1>Админ-панель</h1>
-                <form onSubmit={submitHandler}>
-                    <input onChange={changeHandler} type="text" name="productName" placeholder="Название товара" value={form.productName} />
-                    <input onChange={changeHandler} type="text" name="img" placeholder="Изображение" value={form.img} />
-                    <input onChange={changeHandler} type="text" name="code" placeholder="Штрихкод" value={form.code} />
-                    <input onChange={changeHandler} type="text" name="brand" placeholder="Бренд" value={form.brand} />
-                    <input onChange={changeHandler} type="text" name="producer" placeholder="Производитель" value={form.producer} />
-                    <input onChange={changeHandler} type="text" name="unit" placeholder="Единица измерения" value={form.unit} />
-                    <input onChange={changeHandler} type="text" name="weight" placeholder="Вес" value={form.weight} />
-                    <input onChange={changeHandler} type="number" name="price" placeholder="Цена" value={form.price} />
-                    <input onChange={changeHandler} type="text" name="articleNumber" placeholder="Артикул" value={form.articleNumber} />
-                    <input type="text" onChange={changeHandler} name="description" placeholder="Описание" value={form.description}></input>
-                    <Button styleClass="button" text="Добавить товар" />
+                <form onSubmit={submitHandler} className='admin-page__form'>
+                    <fieldset>
+                        <label className='card-title' htmlFor="productName">Наименование товара</label>
+                        <input onChange={changeHandler} type="text" name="productName" placeholder="Название товара" value={form.productName} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='card-title' htmlFor="img">Изображение товара</label>
+                        <input onChange={changeHandler} type="text" name="img" placeholder="Изображение" value={form.img} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='card-title' htmlFor="code">Штрихкод</label>
+                        <input onChange={changeHandler} type="text" name="code" placeholder="Штрихкод" value={form.code} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='card-title' htmlFor="brand">Бренд</label>
+                        <input onChange={changeHandler} type="text" name="brand" placeholder="Бренд" value={form.brand} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='card-title' htmlFor="producer">Производитель</label>
+                        <input onChange={changeHandler} type="text" name="producer" placeholder="Производитель" value={form.producer} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='card-title' htmlFor="unit">Единица измерения</label>
+                        <input onChange={changeHandler} type="text" name="unit" placeholder="Единица измерения" value={form.unit} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='card-title' htmlFor="weight">Вес</label>
+                        <input onChange={changeHandler} type="text" name="weight" placeholder="Вес" value={form.weight} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='card-title' htmlFor="price">Цена</label>
+                        <input onChange={changeHandler} type="number" name="price" placeholder="Цена" value={form.price} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='card-title' htmlFor="articleNumber">Артикул</label>
+                        <input onChange={changeHandler} type="text" name="articleNumber" placeholder="Артикул" value={form.articleNumber} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='card-title' htmlFor="description">Описание</label>
+                        <input type="text" onChange={changeHandler} name="description" placeholder="Описание" value={form.description}></input>
+                    </fieldset>
+                    <Button handlerClick={submitHandler} styleClass="button" text={buttonText} />
+                    {formAction == 'edit' && <Button handlerClick={setInitialFormAction} styleClass="button" text="Отмена" />}
                 </form>
 
                 {productListElems.length > 0 ? productListElems : <p>Добавьте товары</p>}

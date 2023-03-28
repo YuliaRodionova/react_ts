@@ -24,6 +24,6 @@ export const deleteProduct = (id: number): IAction => {
     return { type: DELETE_PRODUCT, payload: { id } };
 };
 
-export const editProduct = (id: number): IAction => {
-    return { type: EDIT_PRODUCT, payload: { id } };
+export const editProduct = (editedProduct: IProduct): IAction => {
+    return { type: EDIT_PRODUCT, payload: { editedProduct } };
 };
