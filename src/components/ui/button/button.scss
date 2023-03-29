@@ -16,6 +16,10 @@
     cursor: pointer;
     @include miniTitle;
 
+    &:hover {
+        opacity: 0.7;
+    }
+
     @media screen and (min-width: 768px) {
         padding: 15px 25px;
     }
@@ -71,6 +75,12 @@
 
     &_font-main {
         @include sFont;
+    }
+
+    &_wrap {
+        white-space: normal;
+        max-width: 300px;
+        @include mainFont;
     }
 
 }

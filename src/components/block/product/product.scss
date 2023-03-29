@@ -1,0 +1,62 @@
+@import '../../../mixin';
+@import '../../../var';
+
+.product {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+
+    @media screen and (min-width: 1200px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__img {
+        max-height: 100%;
+        width: 100%;
+        object-fit: contain;
+        margin-bottom: auto;
+
+        @media screen and (min-width: 1200px) {
+            width: 50%;
+        }
+    }
+
+    &__wrapper {
+        @media screen and (min-width: 1200px) {
+            width: 50%;
+        }
+    }
+
+    &__available {
+        @include sFont;
+        font-weight: 500;
+        color: $accentColor;
+    }
+
+    &__weight-title {
+        font-weight: 400;
+    }
+
+    &__item {
+        @include flexContainerBetween;
+        gap: 10px;
+        margin-bottom: 25px;
+
+    }
+
+    &__button {
+        display: block;
+
+        &_bold {
+            font-weight: 700;
+        }
+    }
+
+    details {
+        margin-top: 20px;
+        padding-bottom: 20px;
+
+    }
+
+}

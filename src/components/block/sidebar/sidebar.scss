@@ -1,7 +1,8 @@
 @import '../../../var';
+@import '../../../mixin';
 
 .sidebar {
-    padding: 15px;
+    padding: 30px 15px;
 
     &__title {
         text-transform: uppercase;
@@ -9,11 +10,18 @@
         font-weight: 500;
         line-height: 1.2rem;
         color: #000;
+        margin-bottom: 20px;
     }
 
     &__section {
         display: flex;
         flex-direction: column;
+        padding: 15px 0;
+
+    }
+
+    &__container {
+        margin-bottom: 20px;
     }
 
     &__price {
@@ -24,6 +32,12 @@
 
     .button__circle {
         padding: 11px;
+
+    }
+
+    .button {
+        white-space: normal;
+        text-align: left;
     }
 
     .elems-count {
@@ -34,4 +48,11 @@
     .badge {
         width: 40%;
     }
+
+    .details__title {
+        @include mainFont;
+        color: $darkColor;
+        margin-top: 10px;
+    }
+
 }

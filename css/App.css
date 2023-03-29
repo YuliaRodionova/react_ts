@@ -26,8 +26,14 @@ body {
   line-height: 1.5;
 }
 
-a {
+a,
+link {
   text-decoration: none;
+  color: inherit;
+}
+a:hover,
+link:hover {
+  color: inherit;
 }
 
 /* Make images easier to work with */
@@ -151,6 +157,12 @@ h3,
   color: #9ca5b1;
 }
 
+.label-title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #3F4E65;
+}
+
 .page-wrapper {
   max-width: 300px;
   margin-left: auto;
@@ -183,7 +195,19 @@ h3,
 }
 
 .title_xs {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: #000;
+}
+.title_s {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+}
+.title_xl {
+  font-size: 30px;
+  font-weight: 400;
+}
+.title_xl_bold {
+  font-weight: 800;
 }/*# sourceMappingURL=App.css.map */

@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import Main from './components/pages/Main/Main';
 import Cart from './components/pages/Cart/Cart';
-import Product from './components/pages/Product/Product';
 import AdminPage from './components/pages/AdminPage/AdminPage';
+import ProductPage from './components/pages/ProductPage/ProductPage';
 
 function App(): JSX.Element {
   return (
@@ -13,7 +13,7 @@ function App(): JSX.Element {
         <Route path="/" Component={Main} />
         <Route path="/Cart" Component={Cart} />
         <Route path="/Admin" Component={AdminPage} />
-        <Route path="/:id" Component={Product} />
+        <Route path="/:id" Component={ProductPage} />
       </Routes>
     </Router>
 

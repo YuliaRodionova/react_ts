@@ -1,5 +1,5 @@
 .sidebar {
-  padding: 15px;
+  padding: 30px 15px;
 }
 .sidebar__title {
   text-transform: uppercase;
@@ -7,10 +7,15 @@
   font-weight: 500;
   line-height: 1.2rem;
   color: #000;
+  margin-bottom: 20px;
 }
 .sidebar__section {
   display: flex;
   flex-direction: column;
+  padding: 15px 0;
+}
+.sidebar__container {
+  margin-bottom: 20px;
 }
 .sidebar__price {
   font-size: 0.875rem;
@@ -20,10 +25,21 @@
 .sidebar .button__circle {
   padding: 11px;
 }
+.sidebar .button {
+  white-space: normal;
+  text-align: left;
+}
 .sidebar .elems-count {
   white-space: nowrap;
   max-width: 100%;
 }
 .sidebar .badge {
   width: 40%;
+}
+.sidebar .details__title {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  color: #3F4E65;
+  margin-top: 10px;
 }/*# sourceMappingURL=sidebar.css.map */

@@ -32,8 +32,14 @@ body {
   line-height: 1.5;
 }
 
-a {
+a,
+link {
   text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
 }
 
 /* Make images easier to work with */
@@ -164,6 +170,12 @@ h3,
   color: #9ca5b1;
 }
 
+.label-title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: $darkColor;
+}
+
 .page-wrapper {
   @include container;
 }
@@ -171,8 +183,24 @@ h3,
 
 .title {
   &_xs {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
     color: #000;
   }
+
+  &_s {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+  }
+
+  &_xl {
+    font-size: 30px;
+    font-weight: 400;
+
+    &_bold {
+      font-weight: 800;
+    }
+  }
+
 }

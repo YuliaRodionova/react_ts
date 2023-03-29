@@ -3,14 +3,15 @@ import { useDispatch } from "react-redux";
 import { deleteFromCart } from "../../../lib/actions/actionCreators";
 import Button from "../../ui/button/button";
 import { ICartItem } from "../../../interfaces/ICartItem";
-import ElemCount from '../../element/elemCount/elemCount';
+import CountCartChanger from '../../element/countCartChanger/countCartChanger';
+import { Link } from 'react-router-dom';
 
 interface ICartProductItem {
     cartItem: ICartItem,
 }
 
 function CartItem({ cartItem }: ICartProductItem): JSX.Element {
-    const { id, img, weightIcon, weight, unit, brand, productName, code, producer, price } = cartItem;
+    const { id, img, weight, unit, brand, productName, code, producer, price, count } = cartItem;
 
     const dispatch = useDispatch();
 
@@ -22,11 +23,11 @@ function CartItem({ cartItem }: ICartProductItem): JSX.Element {
         <div className='cart-item'>
             <img className='cart-item__img' src={img} alt="" />
             <div className='cart-item__container'>
-                {weightIcon} <span className='cart-item__weight'>{weight} {unit}</span>
-                <h4 className='cart-item__title'><span>{brand}</span> {productName}</h4>
+                {unit == 'г' ? 'коробка' : 'бутылка'} <span className='cart-item__weight'>{weight} {unit}</span>
+                <Link to={`/${id}`} className='cart-item__title'><span>{brand}</span> {productName}</Link>
                 <p className='cart-item__description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, vero. Exercitationem quasi sequi facere totam blanditiis, ullam consequuntur natus autem architecto repellat magnam modi voluptatem a numquam. Doloremque, iste velit.</p>
             </div>
-            <ElemCount type='button' leftValue='+' rightValue='-' count={1} />
+            <CountCartChanger productId={id} leftValue='+' rightValue='-' count={count} />
             <p className='cart-item__price'>{price} ₸</p>
 
             <Button handlerClick={deleteFromCartHandler} styleClass="button button__circle" picture={<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

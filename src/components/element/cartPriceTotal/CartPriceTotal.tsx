@@ -6,7 +6,7 @@ function СartPriceTotal(): JSX.Element {
     const cart = useSelector((store: RootState) => store.cartList.cartList)
 
     const cartPriceTotal = cart.length > 0 ? cart.reduce((summ, item) => {
-        return summ += item.price;
+        return summ += item.price * item.count;
     }, 0) : 0;
 
     return <span>{cartPriceTotal.toFixed(1)}</span>

@@ -1,4 +1,4 @@
-import { ADD_TO_CART, DELETE_FROM_CART, CLEAR_CART } from "./actionTypes";
+import { ADD_TO_CART, DELETE_FROM_CART, CLEAR_CART, CHANGE_CART } from "./actionTypes";
 import { ADD_PRODUCT, DELETE_PRODUCT, EDIT_PRODUCT } from "./actionTypes";
 import { ICartItem } from "../../interfaces/ICartItem";
 import { IProduct } from "../../interfaces/IProduct";
@@ -14,6 +14,10 @@ export const deleteFromCart = (id: number): IAction => {
 
 export const clearCart = (): IAction => {
     return { type: CLEAR_CART };
+};
+
+export const changeCart = (productId: number, changeAction: string): IAction => {
+    return { type: CHANGE_CART, payload: { productId, changeAction } };
 };
 
 export const addProduct = (product: IProduct): IAction => {

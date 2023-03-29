@@ -8,7 +8,7 @@ interface ICardProductItem {
 }
 
 function Card({ productItem }: ICardProductItem): JSX.Element {
-    const { id, img, weightIcon, weight, unit, brand, productName, code, producer, price } = productItem;
+    const { id, img, weight, unit, brand, productName, code, producer, price } = productItem;
 
     const productCartItem = {
         ...productItem,
@@ -18,7 +18,7 @@ function Card({ productItem }: ICardProductItem): JSX.Element {
         <div className="card">
             <img className="card__img" src={img} alt="" />
             <div>
-                {weightIcon}
+                {unit == 'г' ? 'коробка' : 'бутылка'}
                 <p className="card-title">{weight} {unit}</p>
             </div>
             <Link to={`/${id}`} className="card__title"><span className="card__title_bold">{brand}</span> {productName}</Link>

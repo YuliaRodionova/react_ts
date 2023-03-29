@@ -1,1 +1,1 @@
-{"version":3,"sources":["../src/components/ui/checkbox/checkbox.scss","checkbox.css","../src/_var.scss"],"names":[],"mappings":"AAEA;EACI,eAAA;EACA,kBAAA;ACDJ;ADGI;EACI,mBAAA;EACA,gBAAA;EACA,cEPI;EFQJ,aAAA;EACA,mBAAA;ACDR","file":"checkbox.css"}
+{"version":3,"sources":["../src/components/ui/checkbox/checkbox.scss","checkbox.css"],"names":[],"mappings":"AAEA;EACI,eAAA;EACA,kBAAA;ACDJ;ADGI;EACI,aAAA;EACA,mBAAA;ACDR","file":"checkbox.css"}

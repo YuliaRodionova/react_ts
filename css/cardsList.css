@@ -1,4 +1,18 @@
-.cards-list {
+.cards-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cards-list__sort {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+}
+.cards-list__sort_gray {
+  color: #3F4E65;
+  font-weight: 400;
+}
+.cards-list__list {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -8,46 +22,11 @@
   background-color: #fbfbfb;
   padding: 20px 0px 20px 10px;
 }
-
-.cards-page {
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-}
-@media screen and (min-width: 552px) {
-  .cards-page {
-    max-width: 440px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .cards-page {
-    max-width: 600px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .cards-page {
-    max-width: 800px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .cards-page {
-    max-width: 1000px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .cards-page {
-    max-width: 1300px;
-  }
-}
-.cards-page__title {
-  width: 100%;
-}
-.cards-page__wrapper {
+.cards-list__filters {
   display: none;
 }
 @media screen and (min-width: 1200px) {
-  .cards-page__wrapper {
+  .cards-list__filters {
     display: flex;
     justify-content: space-between;
     margin-right: 10px;
@@ -56,23 +35,67 @@
   }
 }
 @media screen and (min-width: 1400px) {
-  .cards-page__wrapper {
+  .cards-list__filters {
     flex-wrap: nowrap;
   }
 }
-.cards-page__wrapper > * {
+.cards-list__filters > * {
   margin-right: 10px;
 }
 @media screen and (min-width: 1200px) {
-  .cards-page__wrapper > * {
+  .cards-list__filters > * {
     margin-top: 10px;
   }
 }
 @media screen and (min-width: 1400px) {
-  .cards-page__wrapper > * {
+  .cards-list__filters > * {
     margin-top: 0;
   }
 }
-.cards-page .sidebar {
+.cards-list__wrapper {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: flex-start;
+}
+@media screen and (min-width: 552px) {
+  .cards-list__wrapper {
+    max-width: 440px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cards-list__wrapper {
+    max-width: 600px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .cards-list__wrapper {
+    max-width: 800px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cards-list__wrapper {
+    max-width: 1000px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .cards-list__wrapper {
+    max-width: 1300px;
+  }
+}
+.cards-list__title {
+  width: 100%;
+}
+.cards-list__select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 3px 10px;
+}
+.cards-list__select::-ms-expand {
+  display: none;
+}
+.cards-list .sidebar {
   width: 23%;
 }/*# sourceMappingURL=cardsList.css.map */

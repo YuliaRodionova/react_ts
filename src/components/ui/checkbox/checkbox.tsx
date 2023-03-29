@@ -8,7 +8,7 @@ interface ICheckbox {
 function Checkbox(props: ICheckbox): JSX.Element {
     const { label, checked } = props;
     return (
-        <label className="checkbox__label">
+        <label className="checkbox__label label-title">
             <input className="checkbox" type="checkbox" checked={checked} />{label}</label>
     )
 

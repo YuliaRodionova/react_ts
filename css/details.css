@@ -1,7 +1,15 @@
-.details__title::-webkit-details-marker {
-  display: none;
+@charset "UTF-8";
+.details[open] summary:after {
+  content: "▴";
 }
-
-details summary::-webkit-details-marker {
-  display: none;
+.details__title {
+  list-style: none;
+}
+.details__title:after {
+  content: "▾";
+}
+.details__description {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #9ca5b1;
 }/*# sourceMappingURL=details.css.map */

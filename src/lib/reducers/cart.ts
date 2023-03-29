@@ -1,4 +1,4 @@
-import { ADD_TO_CART, DELETE_FROM_CART, CLEAR_CART } from "../actions/actionTypes";
+import { ADD_TO_CART, DELETE_FROM_CART, CLEAR_CART, CHANGE_CART } from "../actions/actionTypes";
 import { IAction } from "../../interfaces/IAction";
 import { ICartItem } from "../../interfaces/ICartItem";
 
@@ -39,6 +39,28 @@ export default function cartReducer(state = initialState, action: IAction) {
                 ...state,
                 cartList: []
             }
+        case CHANGE_CART:
+            const { productId, changeAction } = action.payload;
+            const changedCartList = state.cartList.map(item => {
+                if (item.id == productId) {
+                    switch (changeAction) {
+                        case 'plus':
+                            item.count += 1;
+                            break;
+                        case 'minus':
+                            item.count -= 1;
+                            break;
+                        default:
+                            item.count = item.count;
+                    }
+                }
+                return item;
+            });
+            return {
+                ...state,
+                cartList: changedCartList
+            }
+
         default:
             return state;
     }

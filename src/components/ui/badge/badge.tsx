@@ -3,12 +3,13 @@ import './badge.scss';
 interface IBadge {
     type: string;
     text: string | number;
+    handler?: any;
 }
 
 function Badge(props: IBadge): JSX.Element {
-    const { type, text } = props;
+    const { type, text, handler } = props;
     return (
-        <input className='badge' type={type} value={text} />
+        <input onClick={handler} className='badge' type={type} value={text} />
     )
 
 }
