@@ -34,9 +34,13 @@
         color: $accentColor;
     }
 
-    &__weight-title {
-        font-weight: 400;
+    &__weight {
+        &-title {
+            font-weight: 400;
+        }
     }
+
+
 
     &__item {
         @include flexContainerBetween;

@@ -178,6 +178,8 @@ h3,
 
 .page-wrapper {
   @include container;
+  padding-bottom: 50px;
+  padding-top: 30px;
 }
 
 
@@ -203,4 +205,14 @@ h3,
     }
   }
 
+}
+
+.icon-container {
+  display: flex;
+  align-items: revert;
+  margin: 10px 0px;
+
+  svg {
+    margin-right: 5px;
+  }
 }

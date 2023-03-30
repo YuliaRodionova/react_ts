@@ -1,8 +1,9 @@
 import "./footer.scss";
 import Button from "../../ui/button/button";
 import List from "../../element/list/list";
-import Input from "../../ui/input/input";
+import SimpleForm from "../../ui/simpleForm/simpleForm";
 import PriceList from "../../element/priceList/priceList";
+import ContactInfo from "../../element/contactInfo/contactInfo";
 
 function Footer(): JSX.Element {
     return (
@@ -14,7 +15,7 @@ function Footer(): JSX.Element {
                     <h2 className="footer__text">Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в Кокчетаве
                         и Акмолинской области</h2>
                     <h3 className="footer__text">Подпишись на скидки и акции</h3>
-                    <Input styleClass="button form__input form__input_gray" text="Введите ваш E-mail" picture={<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <SimpleForm type="email" name="subscribe" styleClass="button form__input form__input_gray" text="Введите ваш E-mail" picture={<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 12.8571L5 7.5L0 2.14286L1 0L8 7.5L1 15L0 12.8571Z" fill="white" />
                     </svg>} />
                 </div>
@@ -22,10 +23,8 @@ function Footer(): JSX.Element {
                 <List title="Категории" items={[{ text: 'Бытовая химия', link: 'https://dzen.ru/?yredirect=true' }, { text: 'Косметика и гигиена', link: 'https://dzen.ru/?yredirect=true' }, { text: 'Товары для дома', link: 'https://dzen.ru/?yredirect=true' }, { text: 'Товары для детей и мам', link: 'https://dzen.ru/?yredirect=true' }, { text: 'Посуда', link: 'https://dzen.ru/?yredirect=true' },]} />
                 <div className="footer__contact">
                     <h3 className="footer__title-contact">Контакты:</h3>
-                    <h4 className="footer__contact-title">+7 (777) 490-00-91</h4>
-                    <p className="footer__contact-text">время работы: 9:00-20:00</p>
-                    <a className="footer__link" href="#">Заказать звонок</a>
-                    <h4 className="footer__contact-title">opt.sultan@mail.ru </h4>
+                    <ContactInfo styleClassLink="footer__link" />
+                    <p><a href="mailto:opt.sultan@mail.ru" className="footer__contact-title">opt.sultan@mail.ru</a></p>
                     <p className="footer__contact-text">На связи в любое время</p>
                     <div className="footer__contact-container">
                         <img src="/Visa.jpg" alt="" />

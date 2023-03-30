@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/components/block/paginate/paginate.scss","paginate.css","../src/_var.scss"],"names":[],"mappings":"AAEA;EACI,aAAA;EACA,SAAA;EACA,uBAAA;ACDJ;ADGI;EACI,sBAAA;EACA,cETI;EFUJ,yBAAA;ACDR;ADGQ;EACI,UAAA;ACDZ;ADIQ;EACI,YAAA;EACA,YAAA;EACA,qBEhBA;EFiBA,sCAAA;ACFZ","file":"paginate.css"}

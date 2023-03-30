@@ -19,7 +19,8 @@ const initialForm: IProduct = {
     description: '',
     price: 0,
     available: true,
-    articleNumber: ''
+    articleNumber: '',
+    careType: []
 }
 
 function ProductPage(): JSX.Element {

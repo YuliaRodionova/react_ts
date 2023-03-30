@@ -1,3 +1,5 @@
+import './paginate.scss';
+
 interface IPaginate {
     pageCount: number;
     itemsOnPage: number;
@@ -11,15 +13,28 @@ function Paginate({ pageCount, itemsOnPage, itemsPageOffset, setItemsPageOffset 
         setItemsPageOffset(pageNumber * itemsOnPage);
     }
 
+    const currentPage = itemsPageOffset / itemsOnPage;
+
+    function getArrayPages(n: number) {
+        let arr = [];
+        if (n) {
+            for (let i = 1; i <= n;) {
+                arr.push(i++);
+            }
+        }
+        return arr;
+    }
+
+    const pageArray = getArrayPages(pageCount);
+
+    const paginateList = pageArray ? pageArray.map(pageNumber => {
+        return <li key={pageNumber}><button className={`${currentPage === pageNumber - 1 ? 'active' : ''} button`} onClick={() => clickHandler(pageNumber - 1)}>{pageNumber}</button></li>
+    }) : [];
+
     return (
-        <>
-            <ul>
-                <li><button className="button" onClick={() => clickHandler(0)}>1</button></li>
-                <li><button className="button" onClick={() => clickHandler(1)}>2</button></li>
-                <li><button className="button" onClick={() => clickHandler(2)}>3</button></li>
-            </ul>
-        </>
+        <ul className="paginate">{paginateList}</ul>
     )
+
 }
 
 export default Paginate;

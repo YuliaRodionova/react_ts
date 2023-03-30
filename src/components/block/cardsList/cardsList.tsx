@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import Card from '../card/card';
 import { mockProducts } from '../../../mocks/productsMock';
+import { mockCategories } from '../../../mocks/categoriesMock';
 import { IProduct } from '../../../interfaces/IProduct';
+import { ICategory } from '../../../interfaces/ICategory';
 import Sidebar from '../sidebar/sidebar';
 import { RootState } from '../../../lib/store/store';
 import Button from '../../ui/button/button';
@@ -14,18 +16,23 @@ function CardsList(): JSX.Element {
     const productsListState = useSelector((store: RootState) => store.productsList);
     const [products, setProducts] = useState<IProduct[]>([]);
     const [sortBy, setSort] = useState<string>('name_asc');
+    const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(null);
     const [cardsOnPage, setCardsOnPage] = useState<number>(6);
     const [cardsOffset, setCardsOffset] = useState<number>(0);
     const [countPages, setCountPages] = useState<number>(1);
 
+    const categories: ICategory[] = JSON.parse(mockCategories);
+
     useEffect(() => {
-        const productsList: IProduct[] = productsListState.productsList.length > 0 ? productsListState.productsList : JSON.parse(mockProducts);
+        const initialProductsList: IProduct[] = productsListState.productsList.length > 0 ? productsListState.productsList : JSON.parse(mockProducts);
+
+        const productsList = selectedCategoryId ? initialProductsList.filter(product => {
+            return product.careType.includes(selectedCategoryId);
+        }) : initialProductsList;
 
         const needCountPages: number = Math.ceil(productsList.length / cardsOnPage);
 
-        if (needCountPages > 1) {
-            setCountPages(needCountPages);
-        }
+        setCountPages(needCountPages);
 
         switch (sortBy) {
             case 'name_asc':
@@ -47,11 +54,20 @@ function CardsList(): JSX.Element {
         const currentProductsList = productsList.slice(cardsOffset, cardsOnPage + cardsOffset);
 
         setProducts(currentProductsList);
-    }, [sortBy, cardsOffset]);
+    }, [sortBy, cardsOffset, selectedCategoryId]);
 
     const sortHandler = (event: any) => {
         setSort(event.target.value);
     }
+
+    const filterByCategoryHandler = (categoryId: number) => {
+        categoryId == selectedCategoryId ? setSelectedCategoryId(null) : setSelectedCategoryId(categoryId);
+        setCardsOffset(0);
+    }
+
+    const categoriesList = categories ? categories.map(category => {
+        return <Button key={category.categoryId} handlerClick={() => filterByCategoryHandler(category.categoryId)} styleClass={` button_square button_font-main ${selectedCategoryId != category.categoryId ? 'button__bg-white' : ''}`} text={category.categoryTitle} />
+    }) : [];
 
     const cardsList = products ? products.map(product => {
         return <Card key={product.id} productItem={product} />
@@ -59,7 +75,7 @@ function CardsList(): JSX.Element {
 
     return (
         <>
-            {cardsList.length > 0 ? <div className='cards-list'>
+            <div className='cards-list'>
                 <div className='cards-list__header'>
                     <h2 className='section-title cards-list__title'>Косметика и гигиена</h2>
                     <span className='cards-list__sort'>Сортировка:</span>
@@ -71,24 +87,16 @@ function CardsList(): JSX.Element {
                     </select>
                 </div>
                 <div className='cards-list__filters'>
-                    <Button styleClass='button__bg-white button_square button_font-main' text='Уход за лицом' />
-                    <Button styleClass='button__bg-white button_square button_font-main' text='Уход за телом' />
-                    <Button styleClass='button__bg-white button_square button_font-main' text='Уход за руками' />
-                    <Button styleClass='button__bg-white button_square button_font-main' text='Уход за ногами' />
-                    <Button styleClass='button__bg-white button_square button_font-main' text='Уход за волосами' />
-                    <Button styleClass='button__bg-white button_square button_font-main' text='Средства для загара' />
-                    <Button styleClass='button__bg-white button_square button_font-main' text='Средства для бритья' />
-                    <Button styleClass='button__bg-white button_square button_font-main' text='Подарочные наборы' />
-                    <Button styleClass='button__bg-white button_square button_font-main' text='Гигиеническая продукция' />
-                    <Button styleClass='button__bg-white button_square button_font-main' text='Гигиена полости рта' />
-                    <Button styleClass='button__bg-white button_square button_font-main' text='Бумажная продукция' />
+                    {categoriesList}
                 </div>
                 <div className='cards-list__wrapper'>
-                    <Sidebar />
-                    <div className='cards-list__list'>{cardsList}</div>
+                    <Sidebar categories={categories} selectedCategoryId={selectedCategoryId} selectCategoryHandler={filterByCategoryHandler} />
+                    <div className='cards-list__container'>
+                        {cardsList.length > 0 ? <div className='cards-list__list'>{cardsList}</div> : <p>Товаров нет</p>}
+                        {countPages > 1 && <Paginate pageCount={countPages} itemsOnPage={cardsOnPage} itemsPageOffset={cardsOffset} setItemsPageOffset={setCardsOffset} />}
+                    </div>
                 </div>
-                {countPages > 1 && <Paginate pageCount={countPages} itemsOnPage={cardsOnPage} itemsPageOffset={cardsOffset} setItemsPageOffset={setCardsOffset} />}
-            </div> : <p>Товаров нет</p>}
+            </div>
         </>
     )
 }

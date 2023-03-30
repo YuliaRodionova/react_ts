@@ -23,7 +23,6 @@
         align-items: flex-start;
         flex-wrap: wrap;
         flex-grow: 2;
-        width: 77%;
         gap: 21px;
         background-color: #fbfbfb;
         padding: 20px 0px 20px 10px;
@@ -35,7 +34,7 @@
 
         @media screen and (min-width: 1200px) {
             display: flex;
-            justify-content: space-between;
+            // justify-content: space-between;
             margin-right: 10px;
             flex-wrap: wrap;
             width: 100%;
@@ -67,6 +66,10 @@
         @include container;
         display: flex;
         align-items: flex-start;
+    }
+
+    &__container {
+        width: 77%;
     }
 
     &__title {

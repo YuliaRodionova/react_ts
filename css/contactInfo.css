@@ -1,0 +1,18 @@
+.contact__title {
+  font-size: 0.875rem;
+  line-height: 1.3rem;
+  font-weight: 600;
+}
+.contact__text {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  font-weight: 300;
+}
+.contact__link {
+  border-bottom: 1px solid inherit;
+  font-family: Inter;
+  font-size: 0.625rem;
+  font-weight: 400;
+  line-height: 1rem;
+}/*# sourceMappingURL=contactInfo.css.map */

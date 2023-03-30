@@ -8,6 +8,16 @@
   line-height: 1.2rem;
   color: #000;
   margin-bottom: 20px;
+  background-color: #ffffff;
+}
+.sidebar__title.active {
+  font-weight: 600;
+}
+.sidebar__block {
+  overflow: hidden;
+}
+.sidebar__block.closed {
+  height: 95px;
 }
 .sidebar__section {
   display: flex;
@@ -21,6 +31,14 @@
   font-size: 0.875rem;
   font-weight: 300;
   color: #3F4E65;
+}
+.sidebar__button {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  font-weight: 500;
+  color: #3F4E65;
+  justify-content: flex-start;
 }
 .sidebar .button__circle {
   padding: 11px;

@@ -17,7 +17,6 @@
   align-items: flex-start;
   flex-wrap: wrap;
   flex-grow: 2;
-  width: 77%;
   gap: 21px;
   background-color: #fbfbfb;
   padding: 20px 0px 20px 10px;
@@ -28,7 +27,6 @@
 @media screen and (min-width: 1200px) {
   .cards-list__filters {
     display: flex;
-    justify-content: space-between;
     margin-right: 10px;
     flex-wrap: wrap;
     width: 100%;
@@ -83,6 +81,9 @@
   .cards-list__wrapper {
     max-width: 1300px;
   }
+}
+.cards-list__container {
+  width: 77%;
 }
 .cards-list__title {
   width: 100%;

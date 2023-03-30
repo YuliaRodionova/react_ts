@@ -1,4 +1,5 @@
-export const mockProducts = `[{
+export const mockProducts = `[
+{
     "id": 1,
     "img": "/productImg.jpg",
     "productName": "Экологичное туалетное мыло. Литсея и бергамот",
@@ -9,7 +10,7 @@ export const mockProducts = `[{
     "brand": "BioMio",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 48.79,
-    "careType": []
+    "careType": [1]
 },
 {
     "id": 2,
@@ -22,7 +23,7 @@ export const mockProducts = `[{
     "brand": "Palette",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 99.79,
-    "careType": []
+    "careType": [3]
 },
 {
     "id": 3,
@@ -35,7 +36,7 @@ export const mockProducts = `[{
     "brand": "AOS",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 300,
-    "careType": []
+    "careType": [1,2,3]
 },
 {
     "id": 4,
@@ -48,7 +49,7 @@ export const mockProducts = `[{
     "brand": "AOS",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [3]
 }
 ,
 {
@@ -62,7 +63,7 @@ export const mockProducts = `[{
     "brand": "BIMAX",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [3]
 },
 {
     "id": 6,
@@ -75,7 +76,7 @@ export const mockProducts = `[{
     "brand": "Черный Жемчуг",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [3]
 },
 {
     "id": 7,
@@ -88,7 +89,7 @@ export const mockProducts = `[{
     "brand": "Dove",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [1,3]
 },
 {
     "id": 8,
@@ -101,7 +102,7 @@ export const mockProducts = `[{
     "brand": "BIMAX",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [1]
 },
 {
     "id": 9,
@@ -114,7 +115,7 @@ export const mockProducts = `[{
     "brand": "BIMAX",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [1]
 },
 {
     "id": 10,
@@ -127,7 +128,7 @@ export const mockProducts = `[{
     "brand": "BIMAX",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [2]
 },
 {
     "id": 11,
@@ -140,7 +141,7 @@ export const mockProducts = `[{
     "brand": "BIMAX",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [2]
 },
 {
     "id": 12,
@@ -153,7 +154,7 @@ export const mockProducts = `[{
     "brand": "BIMAX",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [1]
 },
 {
     "id": 13,
@@ -166,7 +167,7 @@ export const mockProducts = `[{
     "brand": "BIMAX",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [1,2]
 },
 {
     "id": 14,
@@ -179,7 +180,7 @@ export const mockProducts = `[{
     "brand": "BIMAX",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [1]
 },
 {
     "id": 15,
@@ -192,7 +193,7 @@ export const mockProducts = `[{
     "brand": "BIMAX",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [1,2]
 },
 {
     "id": 16,
@@ -205,7 +206,7 @@ export const mockProducts = `[{
     "brand": "BIMAX",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [2]
 },
 {
     "id": 17,
@@ -218,6 +219,6 @@ export const mockProducts = `[{
     "brand": "BIMAX",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 158.79,
-    "careType": []
+    "careType": [2]
 }
 ]`;

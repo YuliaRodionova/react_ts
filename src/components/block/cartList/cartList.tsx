@@ -25,13 +25,11 @@ function CartList(): JSX.Element {
             <div className='cart__list'>
                 {cartListElems.length > 0 && cartListElems}
                 {orderIsDone && <p>Спасибо за заказ!</p>}
-                {!orderIsDone && cartListElems.length == 0 && <p>Корзина пуста</p>}
+                {!orderIsDone && cartListElems.length === 0 && <p>Корзина пуста</p>}
             </div>
             <div className='cart__footer'>
-                {cartListElems.length > 0 && <div className='cart__sum'><CartPriceTotal /> ₸</div>}
-
                 {cartListElems.length > 0 && <Button handlerClick={clearCartHandler} styleClass='button cart__button' text='Оформить заказ' />}
-
+                {cartListElems.length > 0 && <div className='cart__sum'><CartPriceTotal /> ₸</div>}
             </div>
         </>
     );

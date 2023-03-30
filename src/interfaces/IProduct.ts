@@ -8,4 +8,5 @@ export interface IProduct extends ICard {
     boxSize?: number;
     quantityInBox?: number;
     description?: string;
+    careType: number[]
 }

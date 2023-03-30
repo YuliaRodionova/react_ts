@@ -11,6 +11,19 @@
         line-height: 1.2rem;
         color: #000;
         margin-bottom: 20px;
+        background-color: #ffffff;
+
+        &.active {
+            font-weight: 600;
+        }
+    }
+
+    &__block {
+        overflow: hidden;
+
+        &.closed {
+            height: 95px;
+        }
     }
 
     &__section {
@@ -30,9 +43,15 @@
         color: $darkColor;
     }
 
+    &__button {
+        @include mainFont;
+        font-weight: 500;
+        color: $darkColor;
+        justify-content: flex-start;
+    }
+
     .button__circle {
         padding: 11px;
-
     }
 
     .button {

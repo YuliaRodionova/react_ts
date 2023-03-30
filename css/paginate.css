@@ -1,0 +1,19 @@
+.paginate {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.paginate .button {
+  background-color: #fff;
+  color: #FFC85E;
+  border: 1px solid #3F4E65;
+}
+.paginate .button:hover {
+  opacity: 1;
+}
+.paginate .button.active {
+  cursor: auto;
+  opacity: 0.9;
+  border-color: #EDEDED;
+  box-shadow: inset 3px 4px 10px #EDEDED;
+}/*# sourceMappingURL=paginate.css.map */

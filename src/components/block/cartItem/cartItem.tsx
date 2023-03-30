@@ -5,6 +5,7 @@ import Button from "../../ui/button/button";
 import { ICartItem } from "../../../interfaces/ICartItem";
 import CountCartChanger from '../../element/countCartChanger/countCartChanger';
 import { Link } from 'react-router-dom';
+import WeightIcon from '../../element/weightIcon/weightIcon';
 
 interface ICartProductItem {
     cartItem: ICartItem,
@@ -23,8 +24,10 @@ function CartItem({ cartItem }: ICartProductItem): JSX.Element {
         <div className='cart-item'>
             <img className='cart-item__img' src={img} alt="" />
             <div className='cart-item__container'>
-                {unit == 'г' ? 'коробка' : 'бутылка'} <span className='cart-item__weight'>{weight} {unit}</span>
-                <Link to={`/${id}`} className='cart-item__title'><span>{brand}</span> {productName}</Link>
+                <div className='icon-container'>
+                    <WeightIcon unit={unit} /> <span className='cart-item__weight'>{weight} {unit}</span>
+                </div>
+                <Link to={`/Catalogue/${id}`} className='cart-item__title'><span>{brand}</span> {productName}</Link>
                 <p className='cart-item__description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, vero. Exercitationem quasi sequi facere totam blanditiis, ullam consequuntur natus autem architecto repellat magnam modi voluptatem a numquam. Doloremque, iste velit.</p>
             </div>
             <CountCartChanger productId={id} leftValue='+' rightValue='-' count={count} />

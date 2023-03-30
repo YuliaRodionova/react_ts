@@ -9,9 +9,12 @@ import { IProduct } from "../../../interfaces/IProduct";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../lib/store/store";
 import AdminCard from "../../block/adminCard/adminCard";
+import HandleInputChangeInterface from '../../../interfaces/HandleInputChangeInterface';
+import { ICategory } from '../../../interfaces/ICategory';
+import { mockCategories } from '../../../mocks/categoriesMock';
 
-interface HandleNameChangeInterface {
-    target: HTMLInputElement;
+interface HandleSelectChangeInterface {
+    target: HTMLSelectElement;
 }
 
 const initialForm: IProduct = {
@@ -26,7 +29,8 @@ const initialForm: IProduct = {
     description: '',
     price: 0,
     available: true,
-    articleNumber: ''
+    articleNumber: '',
+    careType: []
 }
 
 // const fields = [
@@ -90,6 +94,8 @@ function AdminPage(): JSX.Element {
     const productsList = useSelector((store: RootState) => store.productsList);
     const dispatch = useDispatch();
 
+    const categories: ICategory[] = JSON.parse(mockCategories);
+
     useEffect(() => {
         switch (formAction) {
             case 'add':
@@ -103,11 +109,22 @@ function AdminPage(): JSX.Element {
         }
     }, [formAction])
 
-    const changeHandler = (event: HandleNameChangeInterface) => {
+    const changeHandler = (event: HandleInputChangeInterface) => {
         const target = event.target;
 
         const name = target.name;
         const value = target.type === 'checkbox' ? target.checked : target.value;
+        setForm(prevForm => {
+            return { ...prevForm, [name]: value }
+        });
+    }
+
+    const changeSelectHandler = (event: any) => {
+        const target = event.target;
+
+        const name = target.name;
+        const value = Array.from(target.options).filter((option: any) => option.selected).map((option: any) => +option.value);
+
         setForm(prevForm => {
             return { ...prevForm, [name]: value }
         });
@@ -136,6 +153,11 @@ function AdminPage(): JSX.Element {
         e.preventDefault();
         setFormAction(initialFormAction);
     }
+
+    const categoriesOptions = categories ? categories.map(category => {
+        const selected = form.careType.includes(category.categoryId);
+        return <option selected={selected} value={category.categoryId}>{category.categoryTitle}</option>
+    }) : [];
 
     const productListElems = productsList ? productsList.productsList.map(product => {
         return <AdminCard setForm={setForm} setFormAction={setFormAction} product={product} />
@@ -185,6 +207,12 @@ function AdminPage(): JSX.Element {
                     <fieldset>
                         <label className='card-title' htmlFor="description">Описание</label>
                         <input type="text" onChange={changeHandler} name="description" placeholder="Описание" value={form.description}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label className='card-title' htmlFor="description">Категория</label>
+                        <select onChange={changeSelectHandler} multiple name="careType">
+                            {categoriesOptions}
+                        </select>
                     </fieldset>
                     <Button handlerClick={submitHandler} styleClass="button" text={buttonText} />
                     {formAction == 'edit' && <Button handlerClick={setInitialFormAction} styleClass="button" text="Отмена" />}

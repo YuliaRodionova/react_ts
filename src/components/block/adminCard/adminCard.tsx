@@ -1,5 +1,6 @@
 import './adminCard.scss'
 import { useDispatch } from "react-redux";
+import { Link } from 'react-router-dom';
 import { deleteProduct } from "../../../lib/actions/actionCreators";
 import Button from "../../ui/button/button";
 import { IProduct } from "../../../interfaces/IProduct";
@@ -25,7 +26,7 @@ function AdminCard({ product, setFormAction, setForm }: IAdminProductItem) {
     return (
         <div className='admin-card'>
             <div>
-                <h4 className='admin-card__title'><span>{product.brand}</span> {product.productName}</h4>
+                <Link to={`/Catalogue/${product.id}`}><h4 className='admin-card__title'><span>{product.brand}</span> {product.productName}</h4></Link>
 
             </div>
             <img className='admin-card__img' src={product.img} alt="" />

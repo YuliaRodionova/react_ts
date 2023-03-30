@@ -7,6 +7,7 @@ import Details from "../../ui/details/details";
 import Button from "../../ui/button/button";
 import PriceList from "../../element/priceList/priceList";
 import { IProduct } from "../../../interfaces/IProduct";
+import WeightIcon from "../../element/weightIcon/weightIcon";
 
 function Product(props: IProduct): JSX.Element {
     const { id, img, weight, unit, brand, productName, code, producer, price, available = true, articleNumber, purpose, productType, boxSize, quantityInBox } = props;
@@ -32,8 +33,8 @@ function Product(props: IProduct): JSX.Element {
             <div className="product__wrapper">
                 <p className="product__available">{available == true ? "в наличии" : "нет в наличии"}</p>
                 <h4 className="title_xl"><span className="title_xl title_xl_bold">{brand}</span> {productName}</h4>
-                <div className="product__item">
-                    {unit == 'г' ? 'коробка' : 'бутылка'}
+                <div className="product__weight icon-container">
+                    <WeightIcon unit={unit} />
                     <span className="card-title product__weight-title">{weight} {unit}</span>
                 </div>
                 <div className="product__item">
