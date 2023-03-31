@@ -14,12 +14,16 @@ import BreadCrumbs from '../../element/breadCrumbs/breadCrumbs';
 import CircleButtonBack from '../../element/circleButtonBack/circleButtonBack';
 import Sort from '../../element/sort/sort';
 
+const initialMaxPrice = 100000;
 
 function CardsList(): JSX.Element {
     const productsListState = useSelector((store: RootState) => store.productsList);
     const [sortBy, setSort] = useState<string>('name_asc');
     const [products, setProducts] = useState<IProduct[]>([]);
     const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(null);
+    const [selectedVendors, setSelectedVendors] = useState<string[]>([]);
+    const [minPrice, setMinPrice] = useState<number>(0);
+    const [maxPrice, setMaxPrice] = useState<number>(initialMaxPrice);
     const [cardsOnPage, setCardsOnPage] = useState<number>(6);
     const [cardsOffset, setCardsOffset] = useState<number>(0);
     const [countPages, setCountPages] = useState<number>(1);
@@ -27,11 +31,23 @@ function CardsList(): JSX.Element {
     const categories: ICategory[] = JSON.parse(mockCategories);
 
     useEffect(() => {
-        const initialProductsList: IProduct[] = productsListState.productsList.length > 0 ? productsListState.productsList : JSON.parse(mockProducts);
+        let productsList: IProduct[] = productsListState.productsList.length > 0 ? productsListState.productsList : JSON.parse(mockProducts);
 
-        const productsList = selectedCategoryId ? initialProductsList.filter(product => {
-            return product.careType.includes(selectedCategoryId);
-        }) : initialProductsList;
+        if (selectedCategoryId) {
+            productsList = productsList.filter(product => {
+                return product.careType.includes(selectedCategoryId);
+            });
+        }
+
+        if (selectedVendors.length > 0) {
+            productsList = productsList.filter(product => {
+                return selectedVendors.includes(product.producer);
+            })
+        }
+
+        productsList = productsList.filter(product => {
+            return product.price >= minPrice && product.price <= maxPrice;
+        })
 
         const needCountPages: number = Math.ceil(productsList.length / cardsOnPage);
 
@@ -57,15 +73,41 @@ function CardsList(): JSX.Element {
         const currentProductsList = productsList.slice(cardsOffset, cardsOnPage + cardsOffset);
 
         setProducts(currentProductsList);
-    }, [sortBy, cardsOffset, selectedCategoryId]);
+    }, [sortBy, cardsOffset, selectedCategoryId, selectedVendors, minPrice, maxPrice]);
 
     const sortHandler = (event: any) => {
         setSort(event.target.value);
     }
 
+    const minPriceHandler = (e: any) => {
+        setMinPrice(e.target.value);
+        setCardsOffset(0);
+    }
+
+    const maxPriceHandler = (e: any) => {
+        const maxPrice = e.target.value;
+        if (maxPrice) {
+            setMaxPrice(maxPrice);
+        } else {
+            setMaxPrice(initialMaxPrice);
+        }
+        setCardsOffset(0);
+    }
+
     const filterByCategoryHandler = (categoryId: number) => {
         categoryId == selectedCategoryId ? setSelectedCategoryId(null) : setSelectedCategoryId(categoryId);
         setCardsOffset(0);
+    }
+
+    const filterByVendorsHandler = (vendor: string) => {
+        const newVendors = [...selectedVendors];
+        const vendorIndex = newVendors.indexOf(vendor);
+        if (vendorIndex == -1) {
+            newVendors.push(vendor);
+        } else {
+            newVendors.splice(vendorIndex, 1);
+        }
+        setSelectedVendors(newVendors);
     }
 
     const categoriesList = categories ? categories.map(category => {
@@ -92,7 +134,14 @@ function CardsList(): JSX.Element {
                     {categoriesList}
                 </div>
                 <div className='cards-list__wrapper'>
-                    <Sidebar categories={categories} selectedCategoryId={selectedCategoryId} selectCategoryHandler={filterByCategoryHandler} />
+                    <Sidebar
+                        maxPriceHandler={maxPriceHandler}
+                        minPriceHandler={minPriceHandler}
+                        maxPrice={maxPrice}
+                        minPrice={minPrice}
+                        categories={categories}
+                        selectedCategoryId={selectedCategoryId} selectCategoryHandler={filterByCategoryHandler}
+                        selectVendorsHandler={filterByVendorsHandler} />
                     <div className='cards-list__mobile-sort'>
                         <Sort sortHandler={sortHandler} sortBy={sortBy} />
                     </div>

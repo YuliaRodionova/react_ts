@@ -6,6 +6,6 @@ export interface ICard {
     brand: string;
     productName: string;
     code: number | string;
-    producer?: string;
+    producer: string;
     price: number;
 }

@@ -10,12 +10,17 @@ interface ISidebar {
     categories?: ICategory[],
     selectedCategoryId?: number | null,
     selectCategoryHandler?: any,
+    selectVendorsHandler?: any,
+    minPrice: number,
+    maxPrice: number,
+    maxPriceHandler: any,
+    minPriceHandler: any
 }
 
-const vendors: string[] = ['Grifon', 'AOS', 'Boyscout', 'Paclan', 'Булгари Грин', 'Nivea', 'Домашний сундук', 'HELP'];
+const vendors: string[] = ['Grifon', 'AOS', 'Нэфис', 'UNILEVER', 'Beauty', 'Paclan', 'Булгари Грин', 'Nivea', 'Домашний сундук', 'КОТИ БЬЮТИ'];
 
 function Sidebar(props: ISidebar): JSX.Element {
-    const { categories, selectedCategoryId, selectCategoryHandler } = props;
+    const { categories, selectedCategoryId, selectCategoryHandler, selectVendorsHandler, maxPriceHandler, minPriceHandler, maxPrice, minPrice } = props;
 
     const [filtersItemsOpen, setfiltersItemsOpen] = useState<boolean>(false);
     const [paramsOpen, setParamsOpen] = useState<boolean>(false);
@@ -35,6 +40,8 @@ function Sidebar(props: ISidebar): JSX.Element {
         return <Button key={category.categoryId} handlerClick={() => selectCategoryHandler(category.categoryId)} styleClass={`sidebar__title ${selectedCategoryId == category.categoryId ? 'active' : ''}`} text={category.categoryTitle} />
     }) : [];
 
+
+
     const clickHandler = () => {
         setfiltersItemsOpen(!filtersItemsOpen);
     };
@@ -49,7 +56,7 @@ function Sidebar(props: ISidebar): JSX.Element {
         }
     }
 
-    const vendorsListElems = vendorsList.map((vendor, i) => <Checkbox key={i} label={vendor} />)
+    const vendorsListElems = vendorsList.map((vendor, i) => <Checkbox key={i} label={vendor} handler={() => selectVendorsHandler(vendor)} />)
 
     const clickParamsHandler = () => {
         setParamsOpen(!paramsOpen);
@@ -69,9 +76,9 @@ function Sidebar(props: ISidebar): JSX.Element {
                 <div className='sidebar__section sidebar__price'>
                     <h4><span className='sidebar__price'>Цена</span> ₸</h4>
                     <div className='elems-count'>
-                        <input type="text" className='badge' defaultValue={0} />
+                        <input min={0} onChange={minPriceHandler} type="number" className='badge' value={minPrice} />
                         <span> - </span>
-                        <input type="text" className='badge' defaultValue={10000} />
+                        <input min={0} onChange={maxPriceHandler} type="number" className='badge' value={maxPrice} />
                     </div>
                 </div>
                 <div className='sidebar__section'>
