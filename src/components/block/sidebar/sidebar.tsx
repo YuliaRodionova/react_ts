@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import './sidebar.scss';
-import ElemCount from '../../element/elemCount/elemCount';
 import Checkbox from '../../ui/checkbox/checkbox';
 import SearchForm from '../../element/searchForm/searchForm';
 import Button from '../../ui/button/button';
 import { ICategory } from "../../../interfaces/ICategory";
+import GradientCircleButton from "../../element/gradientCircleButton/gradientCircleButton";
 
 interface ISidebar {
     categories?: ICategory[],
@@ -18,6 +18,7 @@ function Sidebar(props: ISidebar): JSX.Element {
     const { categories, selectedCategoryId, selectCategoryHandler } = props;
 
     const [filtersItemsOpen, setfiltersItemsOpen] = useState<boolean>(false);
+    const [paramsOpen, setParamsOpen] = useState<boolean>(false);
     const [vendorsList, setVendorsList] = useState<string[]>(vendors);
     const [searchVendors, setSearchVendors] = useState<string | null>(null);
 
@@ -50,20 +51,37 @@ function Sidebar(props: ISidebar): JSX.Element {
 
     const vendorsListElems = vendorsList.map((vendor, i) => <Checkbox key={i} label={vendor} />)
 
+    const clickParamsHandler = () => {
+        setParamsOpen(!paramsOpen);
+    };
+
     return (
         <div className='sidebar'>
-            <h3 className='sidebar__title'>Подбор по параметрам</h3>
-            <div className='sidebar__section sidebar__price'>
-                <h4><span className='sidebar__price'>Цена</span> ₸</h4>
-                <ElemCount type='text' leftValue={0} rightValue={10000} count='-' />
+            <div className="sidebar__params">
+                <h3 className='sidebar__title'>Подбор по параметрам</h3>
+                <GradientCircleButton handler={clickParamsHandler} styleClass="sidebar__params-button" icon={paramsOpen === true ? <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="#3F4E65" />
+                </svg> : <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 5L5 1L1 5" stroke="#3F4E65" />
+                </svg>} />
             </div>
-            <div className='sidebar__section'>
-                <h5>Производитель</h5>
-                <SearchForm handler={searchHandler} />
-                <div className={`sidebar__block ${filtersItemsOpen === true ? 'closed' : ''}`}>
-                    {vendorsListElems}
+            <div className={`sidebar__mobile ${paramsOpen === true ? 'closed' : ''}`}>
+                <div className='sidebar__section sidebar__price'>
+                    <h4><span className='sidebar__price'>Цена</span> ₸</h4>
+                    <div className='elems-count'>
+                        <input type="text" className='badge' defaultValue={0} />
+                        <span> - </span>
+                        <input type="text" className='badge' defaultValue={10000} />
+                    </div>
                 </div>
-                {vendorsListElems.length > 0 ? <Button handlerClick={clickHandler} styleClass='button button__bg-inherit sidebar__button' text={`${filtersItemsOpen === true ? 'Показать все ▾' : 'Скрыть ▴'}`} /> : 'Не найдено'}
+                <div className='sidebar__section'>
+                    <h5>Производитель</h5>
+                    <SearchForm handler={searchHandler} />
+                    <div className={`sidebar__block ${filtersItemsOpen === true ? 'closed' : ''}`}>
+                        {vendorsListElems}
+                    </div>
+                    {vendorsListElems.length > 0 ? <Button handlerClick={clickHandler} styleClass='button button__bg-inherit sidebar__button' text={`${filtersItemsOpen === true ? 'Показать все ▾' : 'Скрыть ▴'}`} /> : 'Не найдено'}
+                </div>
             </div>
             <div className='sidebar__section'>
                 <div className='sidebar__container'>

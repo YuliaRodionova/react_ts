@@ -1,0 +1,30 @@
+@import '../../../var';
+@import '../../../mixin';
+
+.back {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+
+    @media screen and (min-width: 992px) {
+        display: none;
+    }
+
+    &__circle-button {
+        @include flexContainerCenter;
+        background: linear-gradient(90deg, rgba(241, 190, 86, 0.1) 0%, rgba(254, 202, 110, 0.4) 25%);
+        margin-right: 7px;
+
+        svg {
+            transform: translateY(19%);
+            margin-right: 1px;
+        }
+    }
+
+    &__label {
+        font-size: 0.625rem;
+        color: $darkColor;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+}

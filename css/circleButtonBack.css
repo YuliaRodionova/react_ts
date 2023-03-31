@@ -1,0 +1,27 @@
+.back {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+@media screen and (min-width: 992px) {
+  .back {
+    display: none;
+  }
+}
+.back__circle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(241, 190, 86, 0.1) 0%, rgba(254, 202, 110, 0.4) 25%);
+  margin-right: 7px;
+}
+.back__circle-button svg {
+  transform: translateY(19%);
+  margin-right: 1px;
+}
+.back__label {
+  font-size: 0.625rem;
+  color: #3F4E65;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}/*# sourceMappingURL=circleButtonBack.css.map */

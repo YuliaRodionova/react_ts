@@ -5,26 +5,53 @@
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1.2rem;
   color: #000;
-  margin-bottom: 20px;
   background-color: #ffffff;
+  margin-right: auto;
 }
 .sidebar__title.active {
   font-weight: 600;
+}
+.sidebar__params {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1000px) {
+  .sidebar__params-button.button {
+    display: none;
+  }
+}
+.sidebar__mobile {
+  height: 100%;
+}
+.sidebar__mobile.closed {
+  height: 0px;
+  overflow: hidden;
 }
 .sidebar__block {
   overflow: hidden;
 }
 .sidebar__block.closed {
-  height: 95px;
+  height: 87px;
+}
+@media screen and (min-width: 1000px) {
+  .sidebar__block.closed {
+    height: 93px;
+  }
 }
 .sidebar__section {
   display: flex;
   flex-direction: column;
-  padding: 15px 0;
+}
+@media screen and (min-width: 1200px) {
+  .sidebar__section {
+    padding: 15px 0;
+  }
 }
 .sidebar__container {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 .sidebar__price {

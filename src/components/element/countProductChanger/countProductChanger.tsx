@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+
 import Badge from '../../ui/badge/badge';
 
 interface ICountProductChanger {
@@ -23,9 +23,9 @@ function CountProductChanger(props: ICountProductChanger): JSX.Element {
 
     return (
         <div className='elems-count'>
-            <Badge handler={countPlusHandler} type='button' text={leftValue} />
-            <span>{count}</span>
-            <Badge handler={countMinusHandler} type='button' text={rightValue} />
+            <Badge handler={countPlusHandler} text={leftValue} />
+            <span className='elems-count__num'>{count}</span>
+            <Badge handler={countMinusHandler} text={rightValue} />
         </div>
     )
 

@@ -31,9 +31,9 @@ function CountCartChanger(props: ICountCartChanger): JSX.Element {
 
     return (
         <div className='elems-count'>
-            <Badge handler={countPlusHandler} type='button' text={leftValue} />
+            <Badge handler={countPlusHandler} text={leftValue} />
             <span>{currentCount}</span>
-            <Badge handler={countMinusHandler} type='button' text={rightValue} />
+            <Badge handler={countMinusHandler} text={rightValue} />
         </div>
     )
 

@@ -1,4 +1,4 @@
-import './elemCount.scss';
+import './elemCount.scss'
 import Badge from '../../ui/badge/badge';
 
 interface IElemCount {
@@ -11,11 +11,15 @@ interface IElemCount {
 function ElemCount(props: IElemCount): JSX.Element {
     const { leftValue, rightValue, count, type } = props;
 
+    const changeHandler = () => {
+
+    }
+
     return (
         <div className='elems-count'>
-            <Badge type={type} text={leftValue} />
-            <span>{count}</span>
-            <Badge type={type} text={rightValue} />
+            <Badge handler={changeHandler} text={leftValue} />
+            <span className='elems-count__num'>{count}</span>
+            <Badge handler={changeHandler} text={rightValue} />
         </div>
     )
 

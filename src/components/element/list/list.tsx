@@ -14,8 +14,8 @@ interface IList {
 function List(props: IList): JSX.Element {
     const { title, items } = props;
 
-    const itemsElems = items.map(item => {
-        return <li className='list__item'><a href={item.link}>{item.text}</a></li>;
+    const itemsElems = items.map((item, i) => {
+        return <li key={i} className='list__item'><a href={item.link}>{item.text}</a></li>;
     })
 
     return (

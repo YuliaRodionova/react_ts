@@ -24,7 +24,15 @@
 }
 .button__circle {
   border-radius: 50%;
-  padding: 11px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+@media screen and (min-width: 992px) {
+  .button__circle {
+    width: 39px;
+    height: 39px;
+  }
 }
 .button__bg-inherit {
   background-color: inherit;

@@ -2,7 +2,7 @@ import "./simpleForm.scss";
 import Button from "../button/button";
 
 
-interface IInput {
+interface ISimpleForm {
     styleClass: string,
     type: string,
     name: string,
@@ -12,7 +12,7 @@ interface IInput {
     handlerEventType?: string,
 }
 
-function SimpleForm(props: IInput): JSX.Element {
+function SimpleForm(props: ISimpleForm): JSX.Element {
     const { text, type, picture, styleClass, name, handler } = props;
     return (
         <form onSubmit={handler} action="/" className="form">

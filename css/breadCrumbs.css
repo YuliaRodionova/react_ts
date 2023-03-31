@@ -1,0 +1,17 @@
+.breadcrumbs {
+  display: none;
+  font-size: 14px;
+  font-weight: 300;
+  color: #3F4E65;
+}
+@media screen and (min-width: 992px) {
+  .breadcrumbs {
+    display: inline-block;
+  }
+}
+.breadcrumbs__active, .breadcrumbs:active {
+  opacity: 0.7;
+}
+.breadcrumbs__active {
+  padding-left: 7px;
+}/*# sourceMappingURL=breadCrumbs.css.map */

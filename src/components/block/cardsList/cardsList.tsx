@@ -10,12 +10,15 @@ import Sidebar from '../sidebar/sidebar';
 import { RootState } from '../../../lib/store/store';
 import Button from '../../ui/button/button';
 import Paginate from '../paginate/paginate';
+import BreadCrumbs from '../../element/breadCrumbs/breadCrumbs';
+import CircleButtonBack from '../../element/circleButtonBack/circleButtonBack';
+import Sort from '../../element/sort/sort';
 
 
 function CardsList(): JSX.Element {
     const productsListState = useSelector((store: RootState) => store.productsList);
-    const [products, setProducts] = useState<IProduct[]>([]);
     const [sortBy, setSort] = useState<string>('name_asc');
+    const [products, setProducts] = useState<IProduct[]>([]);
     const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(null);
     const [cardsOnPage, setCardsOnPage] = useState<number>(6);
     const [cardsOffset, setCardsOffset] = useState<number>(0);
@@ -74,25 +77,27 @@ function CardsList(): JSX.Element {
     }) : [];
 
     return (
-        <>
+        <><CircleButtonBack />
             <div className='cards-list'>
+                <BreadCrumbs linkTitle='Косметика и гигиена' />
+
                 <div className='cards-list__header'>
                     <h2 className='section-title cards-list__title'>Косметика и гигиена</h2>
-                    <span className='cards-list__sort'>Сортировка:</span>
-                    <select className='cards-list__sort cards-list__sort_gray cards-list__select' onChange={sortHandler} value={sortBy}>
-                        <option value="name_asc">По названию  ▴</option>
-                        <option value="name_desc">По названию ▾</option>
-                        <option value="price_asc">По цене  ▴</option>
-                        <option value="price_desc">По цене ▾</option>
-                    </select>
+                    <div className='cards-list__container-sort'>
+                        <span className='cards-list__sort'>Сортировка:</span>
+                        <Sort sortHandler={sortHandler} sortBy={sortBy} />
+                    </div>
                 </div>
                 <div className='cards-list__filters'>
                     {categoriesList}
                 </div>
                 <div className='cards-list__wrapper'>
                     <Sidebar categories={categories} selectedCategoryId={selectedCategoryId} selectCategoryHandler={filterByCategoryHandler} />
+                    <div className='cards-list__mobile-sort'>
+                        <Sort sortHandler={sortHandler} sortBy={sortBy} />
+                    </div>
                     <div className='cards-list__container'>
-                        {cardsList.length > 0 ? <div className='cards-list__list'>{cardsList}</div> : <p>Товаров нет</p>}
+                        {cardsList.length > 0 ? <div className='cards-list__list'>{cardsList}</div> : <p className='cards-list__empty'>Товаров нет</p>}
                         {countPages > 1 && <Paginate pageCount={countPages} itemsOnPage={cardsOnPage} itemsPageOffset={cardsOffset} setItemsPageOffset={setCardsOffset} />}
                     </div>
                 </div>

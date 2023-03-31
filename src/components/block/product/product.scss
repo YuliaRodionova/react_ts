@@ -11,15 +11,22 @@
         flex-wrap: wrap;
     }
 
-    &__img {
-        max-height: 100%;
+    &__img-wrap {
         width: 100%;
-        object-fit: contain;
         margin-bottom: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         @media screen and (min-width: 1200px) {
             width: 50%;
+            height: 400px;
         }
+    }
+
+    &__img {
+        object-fit: contain;
+        max-height: 100%;
     }
 
     &__wrapper {
@@ -44,16 +51,56 @@
 
     &__item {
         @include flexContainerBetween;
+        flex-wrap: wrap;
         gap: 10px;
         margin-bottom: 25px;
 
+        .title_xl,
+        .elems-count {
+            width: calc(50% -10px);
+
+            @media screen and (min-width: 768px) {
+                width: calc(33.333% - 10px);
+            }
+        }
+
     }
 
-    &__button {
+    &__delivery-button {
         display: block;
+        width: 100%;
+
+        @media screen and (min-width: 768px) {
+            width: calc(50% - 10px);
+        }
 
         &_bold {
             font-weight: 700;
+        }
+    }
+
+    &__cart-button {
+        width: calc(75% - 10px);
+
+        @media screen and (min-width: 768px) {
+            width: calc(33.333% - 10px);
+        }
+    }
+
+    &__share-button {
+        width: calc(25% - 10px);
+
+        @media screen and (min-width: 768px) {
+            width: calc(20% - 10px);
+        }
+
+    }
+
+    &__price-list {
+        width: 100%;
+
+        @media screen and (min-width: 768px) {
+            width: calc(30% - 10px);
         }
     }
 

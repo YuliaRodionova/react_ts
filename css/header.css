@@ -87,6 +87,9 @@
   align-items: center;
   gap: 20px;
 }
+.header__item img {
+  margin-right: 10px;
+}
 .header__desktop {
   display: none;
 }

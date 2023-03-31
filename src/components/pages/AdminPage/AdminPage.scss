@@ -2,9 +2,21 @@
 
 .admin-page {
     &__form {
-        display: flex;
-        flex-wrap: wrap;
-        margin-right: -10px;
+
+        &-fields-row {
+            margin-right: -10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &-buttons {
+            margin: 10px 0;
+            display: flex;
+
+            &>*+* {
+                margin-left: 10px;
+            }
+        }
 
         fieldset {
             display: flex;

@@ -12,6 +12,7 @@ import AdminCard from "../../block/adminCard/adminCard";
 import HandleInputChangeInterface from '../../../interfaces/HandleInputChangeInterface';
 import { ICategory } from '../../../interfaces/ICategory';
 import { mockCategories } from '../../../mocks/categoriesMock';
+import BreadCrumbs from '../../element/breadCrumbs/breadCrumbs';
 
 interface HandleSelectChangeInterface {
     target: HTMLSelectElement;
@@ -166,56 +167,61 @@ function AdminPage(): JSX.Element {
     return (
         <PageLayout>
             <>
+                <BreadCrumbs linkUrl="/Catalogue" classDashed="right-border-dashed" linkTitle="Админ-панель" />
                 <h1>Админ-панель</h1>
                 <form onSubmit={submitHandler} className='admin-page__form'>
-                    <fieldset>
-                        <label className='card-title' htmlFor="productName">Наименование товара</label>
-                        <input onChange={changeHandler} type="text" name="productName" placeholder="Название товара" value={form.productName} />
-                    </fieldset>
-                    <fieldset>
-                        <label className='card-title' htmlFor="img">Изображение товара</label>
-                        <input onChange={changeHandler} type="text" name="img" placeholder="Изображение" value={form.img} />
-                    </fieldset>
-                    <fieldset>
-                        <label className='card-title' htmlFor="code">Штрихкод</label>
-                        <input onChange={changeHandler} type="text" name="code" placeholder="Штрихкод" value={form.code} />
-                    </fieldset>
-                    <fieldset>
-                        <label className='card-title' htmlFor="brand">Бренд</label>
-                        <input onChange={changeHandler} type="text" name="brand" placeholder="Бренд" value={form.brand} />
-                    </fieldset>
-                    <fieldset>
-                        <label className='card-title' htmlFor="producer">Производитель</label>
-                        <input onChange={changeHandler} type="text" name="producer" placeholder="Производитель" value={form.producer} />
-                    </fieldset>
-                    <fieldset>
-                        <label className='card-title' htmlFor="unit">Единица измерения</label>
-                        <input onChange={changeHandler} type="text" name="unit" placeholder="Единица измерения" value={form.unit} />
-                    </fieldset>
-                    <fieldset>
-                        <label className='card-title' htmlFor="weight">Вес</label>
-                        <input onChange={changeHandler} type="text" name="weight" placeholder="Вес" value={form.weight} />
-                    </fieldset>
-                    <fieldset>
-                        <label className='card-title' htmlFor="price">Цена</label>
-                        <input onChange={changeHandler} type="number" name="price" placeholder="Цена" value={form.price} />
-                    </fieldset>
-                    <fieldset>
-                        <label className='card-title' htmlFor="articleNumber">Артикул</label>
-                        <input onChange={changeHandler} type="text" name="articleNumber" placeholder="Артикул" value={form.articleNumber} />
-                    </fieldset>
-                    <fieldset>
-                        <label className='card-title' htmlFor="description">Описание</label>
-                        <input type="text" onChange={changeHandler} name="description" placeholder="Описание" value={form.description}></input>
-                    </fieldset>
-                    <fieldset>
-                        <label className='card-title' htmlFor="description">Категория</label>
-                        <select onChange={changeSelectHandler} multiple name="careType">
-                            {categoriesOptions}
-                        </select>
-                    </fieldset>
-                    <Button handlerClick={submitHandler} styleClass="button" text={buttonText} />
-                    {formAction == 'edit' && <Button handlerClick={setInitialFormAction} styleClass="button" text="Отмена" />}
+                    <div className="admin-page__form-fields-row">
+                        <fieldset>
+                            <label className='card-title' htmlFor="productName">Наименование товара</label>
+                            <input onChange={changeHandler} type="text" name="productName" placeholder="Название товара" value={form.productName} />
+                        </fieldset>
+                        <fieldset>
+                            <label className='card-title' htmlFor="img">Изображение товара</label>
+                            <input onChange={changeHandler} type="text" name="img" placeholder="Изображение" value={form.img} />
+                        </fieldset>
+                        <fieldset>
+                            <label className='card-title' htmlFor="code">Штрихкод</label>
+                            <input onChange={changeHandler} type="text" name="code" placeholder="Штрихкод" value={form.code} />
+                        </fieldset>
+                        <fieldset>
+                            <label className='card-title' htmlFor="brand">Бренд</label>
+                            <input onChange={changeHandler} type="text" name="brand" placeholder="Бренд" value={form.brand} />
+                        </fieldset>
+                        <fieldset>
+                            <label className='card-title' htmlFor="producer">Производитель</label>
+                            <input onChange={changeHandler} type="text" name="producer" placeholder="Производитель" value={form.producer} />
+                        </fieldset>
+                        <fieldset>
+                            <label className='card-title' htmlFor="unit">Единица измерения</label>
+                            <input onChange={changeHandler} type="text" name="unit" placeholder="Единица измерения" value={form.unit} />
+                        </fieldset>
+                        <fieldset>
+                            <label className='card-title' htmlFor="weight">Вес</label>
+                            <input onChange={changeHandler} type="text" name="weight" placeholder="Вес" value={form.weight} />
+                        </fieldset>
+                        <fieldset>
+                            <label className='card-title' htmlFor="price">Цена</label>
+                            <input onChange={changeHandler} type="number" name="price" placeholder="Цена" value={form.price} />
+                        </fieldset>
+                        <fieldset>
+                            <label className='card-title' htmlFor="articleNumber">Артикул</label>
+                            <input onChange={changeHandler} type="text" name="articleNumber" placeholder="Артикул" value={form.articleNumber} />
+                        </fieldset>
+                        <fieldset>
+                            <label className='card-title' htmlFor="description">Описание</label>
+                            <input type="text" onChange={changeHandler} name="description" placeholder="Описание" value={form.description}></input>
+                        </fieldset>
+                        <fieldset>
+                            <label className='card-title' htmlFor="description">Категория</label>
+                            <select onSelect={changeSelectHandler} multiple name="careType">
+                                {categoriesOptions}
+                            </select>
+                        </fieldset>
+                    </div>
+                    <div className="admin-page__form-buttons">
+                        <Button handlerClick={submitHandler} styleClass="button" text={buttonText} />
+                        {formAction == 'edit' && <Button handlerClick={setInitialFormAction} styleClass="button" text="Отмена" />}
+                    </div>
                 </form>
 
                 {productListElems.length > 0 ? productListElems : <p>Добавьте товары</p>}

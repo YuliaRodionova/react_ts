@@ -1,7 +1,14 @@
-.admin-page__form {
+.admin-page__form-fields-row {
+  margin-right: -10px;
   display: flex;
   flex-wrap: wrap;
-  margin-right: -10px;
+}
+.admin-page__form-buttons {
+  margin: 10px 0;
+  display: flex;
+}
+.admin-page__form-buttons > * + * {
+  margin-left: 10px;
 }
 .admin-page__form fieldset {
   display: flex;

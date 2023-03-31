@@ -207,8 +207,13 @@ h3,
   color: #000;
 }
 .title_xl {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 400;
+}
+@media screen and (min-width: 1200px) {
+  .title_xl {
+    font-size: 30px;
+  }
 }
 .title_xl_bold {
   font-weight: 800;
@@ -221,4 +226,10 @@ h3,
 }
 .icon-container svg {
   margin-right: 5px;
+}
+
+.right-border-dashed {
+  border-right: 1px dashed rgba(63, 78, 101, 0.1);
+  padding-left: 7px;
+  padding-right: 7px;
 }/*# sourceMappingURL=App.css.map */

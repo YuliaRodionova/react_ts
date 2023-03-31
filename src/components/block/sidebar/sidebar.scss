@@ -8,13 +8,33 @@
         text-transform: uppercase;
         font-size: 1rem;
         font-weight: 500;
-        line-height: 1.2rem;
         color: #000;
-        margin-bottom: 20px;
         background-color: #ffffff;
+        margin-right: auto;
 
         &.active {
             font-weight: 600;
+        }
+    }
+
+    &__params {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        &-button.button {
+            @media screen and (min-width: 1000px) {
+                display: none;
+            }
+        }
+    }
+
+    &__mobile {
+        height: 100%;
+
+        &.closed {
+            height: 0px;
+            overflow: hidden;
         }
     }
 
@@ -22,18 +42,29 @@
         overflow: hidden;
 
         &.closed {
-            height: 95px;
+            height: 87px;
+
+            @media screen and (min-width:1000px) {
+                height: 93px;
+            }
         }
     }
 
     &__section {
         display: flex;
         flex-direction: column;
-        padding: 15px 0;
+
+        @media screen and (min-width: 1200px) {
+            padding: 15px 0;
+        }
+
+
 
     }
 
     &__container {
+        display: flex;
+        flex-direction: column;
         margin-bottom: 20px;
     }
 

@@ -4,7 +4,11 @@
 .cards-list {
 
     &__header {
-        @include flexContainerBetween;
+
+
+        @media screen and (min-width: 768px) {
+            @include flexContainerBetween;
+        }
     }
 
     &__sort {
@@ -20,7 +24,6 @@
 
     &__list {
         display: flex;
-        align-items: flex-start;
         flex-wrap: wrap;
         flex-grow: 2;
         gap: 21px;
@@ -34,7 +37,6 @@
 
         @media screen and (min-width: 1200px) {
             display: flex;
-            // justify-content: space-between;
             margin-right: 10px;
             flex-wrap: wrap;
             width: 100%;
@@ -65,11 +67,30 @@
     &__wrapper {
         @include container;
         display: flex;
+        flex-direction: column;
         align-items: flex-start;
+
+        @media screen and (min-width:1000px) {
+            flex-direction: row;
+        }
     }
 
     &__container {
-        width: 77%;
+        width: 100%;
+
+        @media screen and (min-width:1000px) {
+            width: 77%;
+        }
+    }
+
+    &__container-sort {
+        display: none;
+
+        @media screen and (min-width: 1000px) {
+            display: flex;
+            align-items: center;
+        }
+
     }
 
     &__title {
@@ -87,8 +108,25 @@
         display: none;
     }
 
+    &__mobile-sort {
+        margin-bottom: 10px;
+
+        @media screen and (min-width: 1000px) {
+            display: none;
+        }
+    }
+
+    &__empty {
+        margin-top: 30px;
+        font-size: 1.1rem;
+    }
+
     .sidebar {
-        width: 23%;
+        width: 100%;
+
+        @media screen and (min-width: 1000px) {
+            width: 23%;
+        }
     }
 
 }

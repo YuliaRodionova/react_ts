@@ -6,6 +6,7 @@ import CartPriceTotal from '../../element/cartPriceTotal/CartPriceTotal';
 import CartItem from '../cartItem/cartItem';
 import Button from '../../ui/button/button';
 import { clearCart } from '../../../lib/actions/actionCreators';
+import BreadCrumbs from '../../element/breadCrumbs/breadCrumbs';
 
 function CartList(): JSX.Element {
     const [orderIsDone, setOrderIsDone] = useState(false);
@@ -21,6 +22,7 @@ function CartList(): JSX.Element {
     }
     return (
         <>
+            <BreadCrumbs linkTitle='Корзина' />
             <h2 className='section-title'>Корзина</h2>
             <div className='cart__list'>
                 {cartListElems.length > 0 && cartListElems}
