@@ -2,11 +2,11 @@ import { ADD_PRODUCT, DELETE_PRODUCT, EDIT_PRODUCT } from "../actions/actionType
 import { IAction } from "../../interfaces/IAction";
 import { IProduct } from "../../interfaces/IProduct";
 
-interface IProductState {
+export interface IProductState {
     productsList: IProduct[];
 }
 
-const initialState: IProductState = {
+export const initialState: IProductState = {
     productsList: [],
 }
 

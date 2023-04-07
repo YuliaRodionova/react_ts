@@ -1,3 +1,4 @@
+import React from "react";
 import "./card.scss";
 import CartButton from "../../element/cartButton/cartButton";
 import TextParamElem from "../../ui/textParamElem/textParamElem";
