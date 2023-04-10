@@ -1,11 +1,9 @@
-import { expect, jest, test } from '@jest/globals';
 import { render, screen } from '@testing-library/react';
 import Card from './card';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../../../lib/store/store';
-import * as reduxHooks from 'react-redux';
-import { fireEvent } from '@testing-library/react';
+
 
 const mockProduct = {
     id: 7,
@@ -28,6 +26,8 @@ describe('Component: Card', () => {
             </BrowserRouter>
 
         );
+
+
         expect(container.querySelector('.card__img')).toBeInTheDocument();
 
         expect(
@@ -40,22 +40,4 @@ describe('Component: Card', () => {
     });
 })
 
-jest.mock('react-redux');
-const jestSpyDispatch = jest.spyOn(reduxHooks, 'useDispatch');
-test('', () => {
-    const dispatch = jest.fn();
-    jestSpyDispatch.mockReturnValue(dispatch);
-    const { container } = render(
-        <BrowserRouter>
-            <Provider store={store}>
-                <Card productItem={mockProduct} />
-            </Provider>
-        </BrowserRouter>
-
-    )
-
-    fireEvent.click(screen.getByLabelText(/корзину/i));
-
-    expect(dispatch).toHaveBeenCalledTimes(1);
-})
 

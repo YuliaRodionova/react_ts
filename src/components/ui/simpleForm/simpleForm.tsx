@@ -16,7 +16,7 @@ function SimpleForm(props: ISimpleForm): JSX.Element {
     const { text, type, picture, styleClass, name, handler } = props;
     return (
         <form onSubmit={handler} action="/" className="form">
-            <input className={styleClass} type={type} name={name} placeholder={text} />
+            <input role="input" data-testid="input" className={styleClass} type={type} name={name} placeholder={text} />
             <Button styleClass="button button__circle form__button" type="submit" picture={picture} />
         </form>
     )
