@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 import WeightIcon from '../../element/weightIcon/weightIcon';
 
 interface ICartProductItem {
-    cartItem: ICartItem,
+    cartItem: ICartItem;
 }
 
 function CartItem({ cartItem }: ICartProductItem): JSX.Element {
-    const { id, img, weight, unit, brand, productName, code, producer, price, count } = cartItem;
+    const { id, img, weight, unit, brand, productName, description, price, count } = cartItem;
 
     const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ function CartItem({ cartItem }: ICartProductItem): JSX.Element {
                     <WeightIcon unit={unit} /> <span className='cart-item__weight'>{weight} {unit}</span>
                 </div>
                 <Link to={`/Catalogue/${id}`} className='cart-item__title'><span>{brand}</span> {productName}</Link>
-                <p className='cart-item__description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, vero. Exercitationem quasi sequi facere totam blanditiis, ullam consequuntur natus autem architecto repellat magnam modi voluptatem a numquam. Doloremque, iste velit.</p>
+                {description && <p className='cart-item__description'>{description}</p>}
             </div>
             <CountCartChanger productId={id} leftValue='+' rightValue='-' count={count} />
             <p className='cart-item__price'>{price} ₸</p>

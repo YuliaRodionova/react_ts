@@ -6,9 +6,9 @@ import Button from "../../ui/button/button";
 import { IProduct } from "../../../interfaces/IProduct";
 
 interface IAdminProductItem {
-    product: IProduct,
-    setFormAction: (action: string) => void,
-    setForm: (product: IProduct) => void
+    product: IProduct;
+    setFormAction: (action: string) => void;
+    setForm: (product: IProduct) => void;
 }
 
 function AdminCard({ product, setFormAction, setForm }: IAdminProductItem) {

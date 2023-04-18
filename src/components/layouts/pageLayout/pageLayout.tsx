@@ -1,5 +1,5 @@
-import Header from "../block/header/header";
-import Footer from "../block/footer/footer";
+import Header from "../../block/header/header";
+import Footer from "../../block/footer/footer";
 
 interface IPageLayout {
     classStyle?: string,

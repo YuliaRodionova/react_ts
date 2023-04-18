@@ -1,6 +1,6 @@
 import SimpleForm from "../../ui/simpleForm/simpleForm";
 interface ISearchInput {
-    handler?: any
+    handler?: any;
 }
 
 function SearchForm({ handler }: ISearchInput): JSX.Element {

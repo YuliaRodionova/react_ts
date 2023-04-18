@@ -113,13 +113,13 @@ function CardsList(): JSX.Element {
     const categoriesList = categories ? categories.map(category => {
         return <Button key={category.categoryId} handlerClick={() => filterByCategoryHandler(category.categoryId)} styleClass={` button_square button_font-main ${selectedCategoryId != category.categoryId ? 'button__bg-white' : ''}`} text={category.categoryTitle} />
     }) : [];
-
     const cardsList = products ? products.map(product => {
         return <Card key={product.id} productItem={product} />
     }) : [];
 
     return (
-        <><CircleButtonBack />
+        <>
+            <CircleButtonBack />
             <div className='cards-list'>
                 <BreadCrumbs linkTitle='Косметика и гигиена' />
 

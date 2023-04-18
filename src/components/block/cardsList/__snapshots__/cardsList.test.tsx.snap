@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card-list element: should create list with items 1`] = `
+exports[`Card-list element: snapshot 1`] = `
 <div>
   <div
     class="back"
@@ -73,7 +73,6 @@ exports[`Card-list element: should create list with items 1`] = `
           </filter>
         </defs>
       </svg>
-       id=
     </button>
     <span
       class="back__label"
@@ -146,7 +145,6 @@ exports[`Card-list element: should create list with items 1`] = `
          
         Уход за телом
          
-         id=
       </button>
       <button
         class=" button_square button_font-main button__bg-white"
@@ -154,7 +152,6 @@ exports[`Card-list element: should create list with items 1`] = `
          
         Уход за руками
          
-         id=
       </button>
       <button
         class=" button_square button_font-main button__bg-white"
@@ -162,7 +159,6 @@ exports[`Card-list element: should create list with items 1`] = `
          
         Уход за лицом
          
-         id=
       </button>
       <button
         class=" button_square button_font-main button__bg-white"
@@ -170,7 +166,6 @@ exports[`Card-list element: should create list with items 1`] = `
          
         Уход за ногами
          
-         id=
       </button>
     </div>
     <div
@@ -204,7 +199,6 @@ exports[`Card-list element: should create list with items 1`] = `
                 stroke="#3F4E65"
               />
             </svg>
-             id=
           </button>
         </div>
         <div
@@ -278,7 +272,6 @@ exports[`Card-list element: should create list with items 1`] = `
                     stroke-width="1.3"
                   />
                 </svg>
-                 id=
               </button>
             </form>
             <div
@@ -381,7 +374,6 @@ exports[`Card-list element: should create list with items 1`] = `
                
               Скрыть ▴
                
-               id=
             </button>
           </div>
         </div>
@@ -397,7 +389,6 @@ exports[`Card-list element: should create list with items 1`] = `
                
               Уход за телом
                
-               id=
             </button>
             <button
               class="sidebar__title "
@@ -405,7 +396,6 @@ exports[`Card-list element: should create list with items 1`] = `
                
               Уход за руками
                
-               id=
             </button>
             <button
               class="sidebar__title "
@@ -413,7 +403,6 @@ exports[`Card-list element: should create list with items 1`] = `
                
               Уход за лицом
                
-               id=
             </button>
             <button
               class="sidebar__title "
@@ -421,7 +410,6 @@ exports[`Card-list element: should create list with items 1`] = `
                
               Уход за ногами
                
-               id=
             </button>
           </div>
         </div>
@@ -628,7 +616,6 @@ exports[`Card-list element: should create list with items 1`] = `
                     fill="white"
                   />
                 </svg>
-                 id=
               </button>
             </div>
           </div>
@@ -752,7 +739,6 @@ exports[`Card-list element: should create list with items 1`] = `
                     fill="white"
                   />
                 </svg>
-                 id=
               </button>
             </div>
           </div>
@@ -876,7 +862,6 @@ exports[`Card-list element: should create list with items 1`] = `
                     fill="white"
                   />
                 </svg>
-                 id=
               </button>
             </div>
           </div>
@@ -1000,7 +985,6 @@ exports[`Card-list element: should create list with items 1`] = `
                     fill="white"
                   />
                 </svg>
-                 id=
               </button>
             </div>
           </div>
@@ -1124,7 +1108,6 @@ exports[`Card-list element: should create list with items 1`] = `
                     fill="white"
                   />
                 </svg>
-                 id=
               </button>
             </div>
           </div>
@@ -1248,7 +1231,6 @@ exports[`Card-list element: should create list with items 1`] = `
                     fill="white"
                   />
                 </svg>
-                 id=
               </button>
             </div>
           </div>

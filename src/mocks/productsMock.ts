@@ -8,7 +8,7 @@ export const mockProducts = `[
     "code": 4604049097548,
     "producer": "BioMio",
     "brand": "BioMio",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "description": "Описание",
     "price": 48.79,
     "careType": [1]
 },
@@ -34,7 +34,7 @@ export const mockProducts = `[
     "code": 4604049097550,
     "producer": "Нэфис",
     "brand": "AOS",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "description": "Описание",
     "price": 300,
     "careType": [1,2,3]
 },
@@ -47,7 +47,7 @@ export const mockProducts = `[
     "code": 4604049097551,
     "producer": "Нэфис",
     "brand": "AOS",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "description": "Описание",
     "price": 158.79,
     "careType": [3]
 }

@@ -1,4 +1,4 @@
-import PageLayout from "../../pageLayout/pageLayout";
+import PageLayout from "../../layouts/pageLayout/pageLayout";
 import CardsList from "../../block/cardsList/cardsList";
 
 function Main(): JSX.Element {

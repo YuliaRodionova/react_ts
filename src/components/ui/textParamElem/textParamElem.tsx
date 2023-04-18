@@ -12,4 +12,4 @@ function TextParamElem(props: IParamElem): JSX.Element {
     )
 
 }
-export default TextParamElem
+export default TextParamElem;

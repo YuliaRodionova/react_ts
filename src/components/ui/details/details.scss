@@ -6,6 +6,7 @@
 
     &__title {
         list-style: none;
+        cursor: pointer;
 
         &:after {
             content: "▾";

@@ -4,10 +4,10 @@ import { useDispatch } from 'react-redux';
 import Badge from '../../ui/badge/badge';
 
 interface ICountCartChanger {
-    leftValue: string | number,
-    rightValue: string | number,
-    count: number,
-    productId: number
+    leftValue: string | number;
+    rightValue: string | number;
+    count: number;
+    productId: number;
 }
 
 function CountCartChanger(props: ICountCartChanger): JSX.Element {
@@ -31,9 +31,9 @@ function CountCartChanger(props: ICountCartChanger): JSX.Element {
 
     return (
         <div className='elems-count'>
-            <Badge handler={countPlusHandler} text={leftValue} />
+            <Badge testid={'button-up'} handler={countPlusHandler} text={leftValue} />
             <span>{currentCount}</span>
-            <Badge handler={countMinusHandler} text={rightValue} />
+            <Badge testid={'button-down'} handler={countMinusHandler} text={rightValue} />
         </div>
     )
 

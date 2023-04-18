@@ -2,7 +2,7 @@ import React from 'react';
 import './button.scss';
 
 interface IButton {
-    testId?: string,
+    testId?: string;
     styleClass: string;
     text?: string;
     picture?: any;
@@ -11,11 +11,12 @@ interface IButton {
 }
 
 function Button(props: IButton): JSX.Element {
-    const { styleClass, text, picture, handlerClick, testId } = props;
+    const { styleClass, text, picture, handlerClick } = props;
     return (
-        <button onClick={handlerClick} className={styleClass}> {text} {picture} id={testId}
+        <button onClick={handlerClick} className={styleClass}> 
+            {text} {picture} 
         </button >
-    )
+    );
 }
 
 export default Button;

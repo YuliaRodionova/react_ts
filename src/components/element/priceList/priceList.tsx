@@ -12,4 +12,4 @@ function PriceList({ styleClassForLink }: IPriceList): JSX.Element {
     )
 
 }
-export default PriceList
+export default PriceList;

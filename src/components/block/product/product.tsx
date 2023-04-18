@@ -12,7 +12,7 @@ import BreadCrumbs from "../../element/breadCrumbs/breadCrumbs";
 import CircleButtonBack from "../../element/circleButtonBack/circleButtonBack";
 
 function Product(props: IProduct): JSX.Element {
-    const { id, img, weight, unit, brand, productName, code, producer, price, available = true, articleNumber, purpose, productType, boxSize, quantityInBox } = props;
+    const { id, img, weight, unit, brand, productName, code, producer, price, available = true, articleNumber, purpose, productType, boxSize, quantityInBox, description } = props;
 
     const [count, setCount] = useState<number>(1);
 
@@ -26,7 +26,8 @@ function Product(props: IProduct): JSX.Element {
         code,
         price,
         producer,
-        count
+        count,
+        description
     }
 
     return (
@@ -59,9 +60,7 @@ function Product(props: IProduct): JSX.Element {
                     <TextParamElem keyParam="Бренд" valueParam={brand} />
                     <TextParamElem keyParam="Артикул" valueParam={articleNumber} />
                     <TextParamElem keyParam="Штрихкод" valueParam={code} />
-                    <Details title="Описание">
-                        <p className='details__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.</p>
-                    </Details>
+                    {description && <Details title="Описание"><p className='details__description'>{description}</p></Details>}
                     <Details title="Характеристики">
                         <TextParamElem keyParam="Назначение" valueParam={purpose ? purpose : brand} />
                         <TextParamElem keyParam="Тип" valueParam={productType ? productType : brand} />

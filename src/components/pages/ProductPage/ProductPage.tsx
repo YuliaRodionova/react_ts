@@ -2,7 +2,7 @@ import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Product from "../../block/product/product";
-import PageLayout from "../../pageLayout/pageLayout";
+import PageLayout from "../../layouts/pageLayout/pageLayout";
 import { IProduct } from '../../../interfaces/IProduct';
 import { mockProducts } from '../../../mocks/productsMock';
 import { RootState } from '../../../lib/store/store';

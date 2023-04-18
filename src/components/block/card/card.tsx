@@ -6,7 +6,7 @@ import { ICard } from "../../../interfaces/ICard";
 import { Link } from "react-router-dom";
 import WeightIcon from "../../element/weightIcon/weightIcon";
 interface ICardProductItem {
-    productItem: ICard,
+    productItem: ICard;
 }
 
 function Card({ productItem }: ICardProductItem): JSX.Element {

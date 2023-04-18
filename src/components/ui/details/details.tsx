@@ -2,7 +2,7 @@ import "./details.scss"
 
 interface IDetails {
     title: string;
-    children: string | any;
+    children: any;
 }
 
 function Details(props: IDetails): JSX.Element {

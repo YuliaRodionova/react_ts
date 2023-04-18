@@ -4,13 +4,14 @@ interface IBadge {
     text: string | number;
     handler?: any;
     handlerEventType?: string;
+    testid?: string | number;
 }
 
 function Badge(props: IBadge): JSX.Element {
-    const { text = '', handler } = props;
+    const { text = '', handler, testid } = props;
     return (
-        <input onClick={handler} className='badge' type='button' defaultValue={text} />
-    )
+        <input data-testid={testid} onClick={handler} className='badge' type='button' defaultValue={text} />
+    );
 
 }
-export default Badge
+export default Badge;

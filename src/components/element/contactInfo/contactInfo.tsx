@@ -1,9 +1,9 @@
 import './contactInfo.scss';
 
 interface IContactInfo {
-    styleClassTitle?: string,
-    styleClassText?: string,
-    styleClassLink?: string,
+    styleClassTitle?: string;
+    styleClassText?: string;
+    styleClassLink?: string;
 }
 
 function ContactInfo({ styleClassTitle, styleClassText, styleClassLink }: IContactInfo): JSX.Element {
@@ -16,4 +16,4 @@ function ContactInfo({ styleClassTitle, styleClassText, styleClassLink }: IConta
     )
 }
 
-export default ContactInfo
+export default ContactInfo;

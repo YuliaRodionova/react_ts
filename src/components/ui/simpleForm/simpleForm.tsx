@@ -3,13 +3,13 @@ import Button from "../button/button";
 
 
 interface ISimpleForm {
-    styleClass: string,
-    type: string,
-    name: string,
-    text?: string,
-    picture?: any,
-    handler?: any,
-    handlerEventType?: string,
+    styleClass: string;
+    type: string;
+    name: string;
+    text?: string;
+    picture?: any;
+    handler?: any;
+    handlerEventType?: string;
 }
 
 function SimpleForm(props: ISimpleForm): JSX.Element {

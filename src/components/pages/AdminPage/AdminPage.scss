@@ -18,13 +18,7 @@
             }
         }
 
-        fieldset {
-            display: flex;
-            flex-direction: column;
-            border: none;
-            margin-bottom: 10px;
-            margin-right: 10px;
-        }
+        
 
         input {
             border: 1px solid $darkColor;

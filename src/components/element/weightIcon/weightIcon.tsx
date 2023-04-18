@@ -1,5 +1,5 @@
 interface IWeightIcon {
-    unit: string
+    unit: string;
 }
 
 function WeightIcon({ unit }: IWeightIcon): JSX.Element {

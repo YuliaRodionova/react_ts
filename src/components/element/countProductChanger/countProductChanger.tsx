@@ -2,10 +2,10 @@
 import Badge from '../../ui/badge/badge';
 
 interface ICountProductChanger {
-    leftValue: string | number,
-    rightValue: string | number,
-    count: number,
-    setCount: any
+    leftValue: string | number;
+    rightValue: string | number;
+    count: number;
+    setCount: any;
 }
 
 function CountProductChanger(props: ICountProductChanger): JSX.Element {

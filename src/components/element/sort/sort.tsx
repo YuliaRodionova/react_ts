@@ -1,8 +1,8 @@
 import './sort.scss';
 
 interface ISort {
-    sortBy: string,
-    sortHandler: any
+    sortBy: string;
+    sortHandler: any;
 }
 
 function Sort({ sortBy, sortHandler }: ISort): JSX.Element {
@@ -14,7 +14,7 @@ function Sort({ sortBy, sortHandler }: ISort): JSX.Element {
                 <option value="price_asc">По цене  ▴</option>
                 <option value="price_desc">По цене ▾</option>
             </select>
-        </>)
-}
+        </>);
+};
 
 export default Sort;

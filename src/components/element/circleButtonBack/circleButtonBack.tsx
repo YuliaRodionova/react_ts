@@ -33,4 +33,4 @@ function CircleButtonBack(): JSX.Element {
     )
 }
 
-export default CircleButtonBack
+export default CircleButtonBack;

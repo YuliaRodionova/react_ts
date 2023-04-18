@@ -2,13 +2,13 @@ import React from 'react';
 import "./list.scss";
 
 interface IlistItem {
-    text: string,
-    link: string
+    text: string;
+    link: string;
 }
 
 interface IList {
     title?: string;
-    items: IlistItem[]
+    items: IlistItem[];
 }
 
 function List(props: IList): JSX.Element {

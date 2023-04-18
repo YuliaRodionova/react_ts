@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import store from '../../../lib/store/store';
 
 
-test('Card-list element: should create list with items', () => {
+test('Card-list element: snapshot', () => {
 
 
     const { container } = render(

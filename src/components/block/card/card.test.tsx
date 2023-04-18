@@ -27,16 +27,16 @@ describe('Component: Card', () => {
 
         );
 
-
         expect(container.querySelector('.card__img')).toBeInTheDocument();
-
+        
         expect(
-            container.querySelector('.card__img').getAttribute("src")
+            container.querySelector('.card__img')!.getAttribute("src")
         ).toEqual(mockProduct.img);
+        
 
-        expect(container.querySelector('.card__price').textContent).toBe(`${mockProduct.price} ₸`);
+        expect(container.querySelector('.card__price')!.textContent).toBe(`${mockProduct.price} ₸`);
 
-
+        expect(container.querySelector('.button_min')).not.toBeDisabled();;
     });
 })
 
